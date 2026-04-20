@@ -19,3 +19,27 @@
 - Incentivizes a reason to come back 2 hours later by once you unlock a wildball spin, you have to wait 2 hours to use. 
 
 - Music: Is rather gentle to the ears, like not too much, when you play the slot machines for the first one that is. 
+
+#### Summary/Organization of Implementable Slot Machine Tactics ###
+
+- Main background screen for homepage, and a loading scene into the game
+
+- Consistent win rates
+
+- Slot machine taking up most of the screen, other info is miscellanous and put to the side as icons or buttons. Structure button on one side, bet amount with increase and decrease on the other.
+
+- Interactive, or a character that cheers you on. 
+
+- Track personal records and make a notification noticeable on the side that you have beat your own previous record.
+
+**Potential features, takes more time to do, may need a place to store data or a server**
+
+- Rotating games with themes (includes musics), or unlockable themes if thats more doable.
+
+- Wildball spin, when unlocked, wait 2 hours to roll for anticipation and returning players
+
+- Levels, aka by the amount you bet with level up rewards. 
+
+- Daily quests, weekly free coins spin, daily coin login, multiplier collector
+
+- Facebook share
