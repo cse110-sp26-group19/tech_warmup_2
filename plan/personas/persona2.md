@@ -5,7 +5,7 @@
 - Age: 68
 - Lives with her children and her grandchildren
 ## Background
-- Filipino immigrant, spends lots of time at home, enjoys spending her time watching k-dramas and online slot machine games on IPad.
+- Filipino immigrant, spends lots of time at home, enjoys spending her time watching k-dramas and playing online slot machine games on IPad.
 ## Goal
 - Stay mentally simulated but do not have to focus much
 - Have simple and fun entertainment without stress or complicated rules
