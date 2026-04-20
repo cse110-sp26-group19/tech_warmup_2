@@ -1,0 +1,5 @@
+## Focus Area : Bonus Buys
+- All modern crytpo slot machines focus around their 'bonus buys' regular slot spins are not actually what the fans are playing for, but rather a means to get into the bonus buy. This is a special mode where some form of mini game that is based on the slot, where the user has much better odds to win larger sums of money or jackpots, which build huge excitement. 
+- The user is able to pay a large amount of money to skip the slot spins and go directly into this 'bonus buy mode'. So while they have an increased chance of getting more money compared to regular spins, they spent more money to pay for the buy itself, balancing it out
+- An exciting bonus buy seems to be the primary focus for gamblers, so much so that a bonus buy that is not not entertaining or unsatisfying in some way, will completely remove that slot from relevancy, so it should most likely be the primary focus of the entire website
+- While the aesthetics matches those of the normal slot, the mechanics of how it pays out are different from the base slot spins, giving it a 'different' more high stakes feel for when players spin in
