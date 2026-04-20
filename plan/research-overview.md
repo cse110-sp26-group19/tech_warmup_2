@@ -24,9 +24,12 @@
   - aesthetics same, payout differs, is higher
 
 - Game speed and betting frequency (faster game speed, higher getting frequency)
+- Game spins take a short time allowing for people to spin more rapidly and think less rationally
 
 - Win animations wouldhave a lot of coins energy and color
   - Big flashing animations + sound effects
+  - add animation that adds anticpation before a win to add further hype and excitement when they get the payout
+
 - Spin button animated and addictive + sound effects
 - Referall and prizes to hook people in
 
@@ -34,7 +37,9 @@
   - sound design: 
       - each reel stop is paired with a clicking or ticking sound
       - it increases tension and making the player focus on each individual result.
-    - staggered reel stopping, synchronized sound effects, and slight delays 
+    - staggered reel stopping, synchronized sound effects, and slight delays
+
+- Flashy fun animations, bright colorful lights and sounds thatenagge your brain and stimulate and excite people 
 
 ##### Psychological Mechanism
 - Unpredictable rewards payout 
@@ -42,9 +47,12 @@
 
 - Illusion of control through interactivity 
     - ex) stop reel, pick bonus outcomes
+    - ex) allow players to stop the reel early
 
 - Cognitive bias and illusion of patterns
 - Near miss effect (win but not quite), makes them want to play more
+  - ex) stop close near to a jackpot
+  - ex) almost win but with the last one off
   
 - Losses disguised as wins with lights and noises
   - keeps players engaged, trick people to think they're doing well
@@ -71,15 +79,43 @@
 ###### Classic Symbols
 - Coins, gold bar, gift box, clover, heart, gold coin, bomb, money bag, playing cards (hearts/spades), diamond, trophy, watermelon, grapes, cherries, orange, pineapple, apple, BAR, dice, star, lucky 7, poker chip
 
+###### Slot Machine Types
+- Classic Slots (3 reels)
+  - simple, traditional(cheery, bars etc), less flashy, consistent gameplay and clear win conditions
+  - limited paylines
+- Video Slots (5 reels plus)
+  - digital dsiplays and advanced graphics for storylines
+  - Bonus features: Wilds, mini games and multipliers
+  - mulitple paylines
+- Progressive Slots (attractive for users for life changing payments)
+  - small percentage of each wager contributes to jackpot pull
+    - accumulates until luckly player wins all the accumulated money
+- Bonus Slots (Trigger: Specific Combo)
+  - Features interactive rounds & features beyond standard spins
+    - Bonus icons, free spins, wheel spins, multipliers, pick-and-win
+- Penny slots 
+  - low risk bets, like 30-50 cent mininum
+    - bet increases when multiple paylines activated
+- 3D slots (interactive and fun like a game) (Like video slots)
+  - Animated characters, cinematic intros, rich visuals
+
 ### User Reseearch
 ##### User Types
 - Casual players want quick fun
+- Grind players bet in small amounts and grind it out
 - Serious players want stats and big wins
+  - Premium players bet in large amounts, access to aubstantial payrolls used to bet, benefit from free casino hotel rooms, meals and casino giveaways to keep them coming back for more.
+
+###### Different User preferences
+- high stakes, low payout rate, more money at a time payed out
+- low stakes, high payout rate, less money at a time payed out
 
 
 ## **Team Roster detailing Research Contribution**
-- Omar researched on features such as return to player percentage and different machine types. General mechanics suchas RNG plus game speed and betting frequency. Psychological mechanics used on players such as unpredicatble rewards payout, illusion of control through interactivity, cognitive bias and illusion of patterns and losses disguised as wins. 
+- Omar researched on features such as return to player percentage and different machine types (hence different user types and perferences). General mechanics suchas RNG plus game speed and betting frequency. Psychological mechanics used on players such as unpredicatble rewards payout, illusion of control through interactivity, cognitive bias and illusion of patterns and losses disguised as wins. 
 - Abhay researched on themes (fantasy holdiday, fruits, asian fortune3), classic symbols used. Mathematical edge of their profit margins, referall, prizes, win animations, spin button addictive and is important and the psychological trick of trading money for crdits. Also some research on near miss effect and unpredictable win schedule, but already written down. 
 - Tybalt researched on a special mechanic that a lot of players really like called the bonus buys, its a special mode mini game that has same aesthectics but higher stakes/payouts. Some users pay to get there faster
 - Miguel - focus on anticipation and reel stopping mechanics, such as sound and indivual reel stopping with ticking sounds. A bit of research showed how losses are also disguised as wins with delay and buildup. says staggered reel stopping, synchronized sound effects, and slight delays is critical
 - lorenzo researched on themes such as fruit, asian fortune, and casino night. 2 user types. random wins, big flashing animations when win, reel stiopping, sound effects for spins and wins. And a couple of features to add, was win/loss streak counter, Daily bonus for logins and big jackpots big and onscreen and balnce always visible.
+- Jennifers focus was on types of players and types of slot machines. suchs as grind players and premium players. Also her reserach is also currently under Slot Machine Types,and she researched classic slots, bonus slots, video, penny and 3d.
+- George focused on how to make slot machines addcitive. such as near wins, shorter spins for less rationality and increased speed, graophics and sounds and snimaltions that engage the brain, abiliti to stop reels early from interactivity, animation before win to increase anticipation people up and give greater hyoe and excitement when they win
