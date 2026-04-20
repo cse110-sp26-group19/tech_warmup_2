@@ -1,0 +1,54 @@
+## Focus Area: Types of Users & Types of Slots
+
+- <strong>Types of Users</strong>
+    - Grind players
+        - Typically bet in small amounts, grinding it out ($20 chips through $1 bets)
+    - Premium players
+        - Bet in large ammounts
+        - Access to substantial bankrolls
+            - Money used to bet
+        - What casino management wnats at casinos
+            - Usually gives the cashino hundreds to thousands of dollars worth of wagering
+        - Benefit from casino giveaways, free hotel rooms, meals 
+            - A way to keep the <strong> high rollers </strong> to come back (an advantage)
+        - Casino believes the players will lose more than they will win
+- <strong>Types of Slots</strong>
+    - Classic Slots "three-reel slots"
+        - Simple gameplay, requires to pull a bar to active the reels
+        - Limited paylines
+        - Traditional symbols (cherries, bars, sevens, bells)
+        - Less flashy graphics
+        - Consistent gameplay & clear win conditions
+    - Video Slots
+        - Five reels and more 
+        - Uses digital displays & advanced graphics for themes and storylines
+        - Multiple paylines
+            - 20 to 100
+        - Bonus features
+            - Wilds, multipliers, and mini-games
+        - More dynamic & entertaining
+        - Users may find it hard to keep up with gameplay due to many features
+    - Progressive Slots
+        - Offers some of the largest jackpots available in any casino
+        - Small percentage of each wager contributes to a jackpot pool
+            - Prize increases until the lucky player hits the winning result
+            - Prize ranges from thousands to millions of dollars
+                - Attractive for users seeking life-changing payment
+    - Bonus Slots
+        - Features interactive rounds & features beyond standard spins
+            - Triggered by specific symbol combinations
+            - onus icons, free spins, wheel spins, multipliers, pick-and-win
+        - Design includes video & themed slots
+    - Penny Slots
+        - Allow players to bet as little as one cent per line
+            - Minimum bets include 30-50 cents per spin
+        - Bet increases when multiple paylines are activated
+        - For users who enjoy excitement without pay risk
+    - 3D Slots
+        - Advanced graphic technology
+            - Animated charactes, cinematic intros, rich visuals to come to life
+        - Function like video slots
+        - More interactive and entertainment experience
+            - Comparable to a video game
+        - The next iteration of advanced slot machine technology
+        
