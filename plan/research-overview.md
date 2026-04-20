@@ -1,7 +1,7 @@
 ## **Research Summary**
 ### Domain Research
 
-#### Features
+#### **Features**
 - (Info)Return to player percentage, average of how much expect to get back when play
   
 - 2 different machines, 
@@ -23,7 +23,8 @@
 - Rotating themes/limited games or unlockable themes
 - Maybe consistent win rates but (IT DEPENDS ON THE USER TYPE)
 
-#### Special Mechanics
+
+#### **Special Mechanics**
 - Special mini game mode that excites player, known as the bonus buys, better odds to win large money or jackpot, creates excitement (Should be primary focus)
   - People play just for the bonus buy or pay or spin just to get the bonus buy faster
   - aesthetics same, payout differs, is higher
@@ -54,7 +55,7 @@
 - Tracks your personal record, and gives a congratulations or something on the side as beat your best first record notification
 
 
-#### Psychological Mechanism
+#### **Psychological Mechanism**
 - Unpredictable rewards payout 
   - to surprise users when they dont expect it
 
@@ -75,8 +76,9 @@
   - reduces psychological friction, make people spend more
 
 
+
 ### User Interface Research (Domain Type Research)
-#### General Interface Design
+#### **General Interface Design**
 **Potential Home Page Interface**
 - Main background into the scene and a loading screen with a blur on the main background
 
@@ -86,7 +88,7 @@
 - (Mobile) Slot machine takes up most of the screen, and the button to spin is on the right side and the bet amount plus increase is on the left side
   - other buttons are put to the side as icons, such as the info icon, clicked shows the payout info.
 
-#### Themes
+#### **Themes**
 - Fruit / Classic — simple, nostalgic, fast gameplay (cherries, seven, bars)
 
 - Asian Fortune / Dragon (e.g. Jinse Dao Dragon) — red and gold palette, dragon mascot, ornate reel frames, payout numbers displayed on symbols
@@ -95,10 +97,10 @@
   
 - Casino night (neon lights, city background)
 
-#### Classic Symbols
+#### **Classic Symbols**
 - Coins, gold bar, gift box, clover, heart, gold coin, bomb, money bag, playing cards (hearts/spades), diamond, trophy, watermelon, grapes, cherries, orange, pineapple, apple, BAR, dice, star, lucky 7, poker chip
 
-#### Slot Machine Types
+#### **Slot Machine Types**
 - Classic Slots (3 reels)
   - simple, traditional(cheery, bars etc), less flashy, consistent gameplay and clear win conditions
   - limited paylines
@@ -119,17 +121,17 @@
   - Animated characters, cinematic intros, rich visuals
 
 ### User Research
-#### User Types
+#### **User Types**
 - Casual players want quick fun
 - Grind players bet in small amounts and grind it out
 - Serious players want stats and big wins
   - Premium players bet in large amounts, access to aubstantial payrolls used to bet, benefit from free casino hotel rooms, meals and casino giveaways to keep them coming back for more.
 
-#### Different User preferences
+#### **Different User preferences**
 - high stakes, low payout rate, more money at a time payed out
 - low stakes, high payout rate, less money at a time payed out
   
-#### User Reviews 
+#### **User Reviews**
 - many bad reviews were on the game being too money hungry
   - aka after one top-up, they double the price
   - gradually increasing the minimum bet and also very inconsistent winrates
