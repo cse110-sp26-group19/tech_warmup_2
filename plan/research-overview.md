@@ -14,14 +14,21 @@
 - Win/losses streak counter 
 
 - Daily bonus for log ins
+  - daily quests, weekly free coins spins, daily coin login and muiltiplier collector, achievements
+  - first starting the game, login rewards
+  - mailbox that gives coins during special events and when you start
+- Levels based on the bet amount
 
-##### General Mechanics
 - RNG for slots, separate from past pulls.
+- Rotating themes/limited games or unlockable themes
+- Maybe consistent win rates but (IT DEPENDS ON THE USER TYPE)
 
 ##### Special Mechanics
 - Special mini game mode that excites player, known as the bonus buys, better odds to win large money or jackpot, creates excitement (Should be primary focus)
   - People play just for the bonus buy or pay or spin just to get the bonus buy faster
   - aesthetics same, payout differs, is higher
+
+- Wildball spins - once unlocked/ got, wait 2 hours to use
 
 - Game speed and betting frequency (faster game speed, higher getting frequency)
 - Game spins take a short time allowing for people to spin more rapidly and think less rationally
@@ -32,6 +39,7 @@
 
 - Spin button animated and addictive + sound effects
 - Referall and prizes to hook people in
+  - Facebook shares on your wins
 
 - Reels spin and stop one by one slowly with a slight delay building suspense instead of immediately showing the result 
   - sound design: 
@@ -40,6 +48,11 @@
     - staggered reel stopping, synchronized sound effects, and slight delays
 
 - Flashy fun animations, bright colorful lights and sounds thatenagge your brain and stimulate and excite people 
+
+- Potentially a person or character that guides you through a tutorial and cheers you on. or at least stays on the side. (DEPENDS ON GAME STYLE CHOSEN)
+
+- Tracks your personal record, and gives a congratulations or something on the side as beat your best first record notification
+
 
 ##### Psychological Mechanism
 - Unpredictable rewards payout 
@@ -64,8 +77,14 @@
 
 ##### User Interface
 ###### General Interface Design
+**Potential Home Page Interface**
+- Main background into the scene and a loading screen with a blur on the main background
+
+**Slot Machine Interface**
 - Big Jackpot numbers visible at all times (Big and onscreen)
 - Balance always visible
+- (Mobile) Slot machine takes up most of the screen, and the button to spin is on the right side and the bet amount plus increase is on the left side
+  - other buttons are put to the side as icons, such as the info icon, clicked shows the payout info.
 
 ###### Themes
 - Fruit / Classic — simple, nostalgic, fast gameplay (cherries, seven, bars)
@@ -99,7 +118,7 @@
 - 3D slots (interactive and fun like a game) (Like video slots)
   - Animated characters, cinematic intros, rich visuals
 
-### User Reseearch
+### User Research
 ##### User Types
 - Casual players want quick fun
 - Grind players bet in small amounts and grind it out
@@ -109,6 +128,12 @@
 ###### Different User preferences
 - high stakes, low payout rate, more money at a time payed out
 - low stakes, high payout rate, less money at a time payed out
+  
+###### User Reviews 
+- many bad reviews were on the game being too money hungry
+  - aka after one top-up, they double the price
+  - gradually increasing the minimum bet and also very inconsistent winrates
+- The above are likely casual players that want quick fun, and do not like suspense and unpredicability
 
 
 ## **Team Roster detailing Research Contribution**
@@ -119,3 +144,4 @@
 - lorenzo researched on themes such as fruit, asian fortune, and casino night. 2 user types. random wins, big flashing animations when win, reel stiopping, sound effects for spins and wins. And a couple of features to add, was win/loss streak counter, Daily bonus for logins and big jackpots big and onscreen and balnce always visible.
 - Jennifers focus was on types of players and types of slot machines. suchs as grind players and premium players. Also her reserach is also currently under Slot Machine Types,and she researched classic slots, bonus slots, video, penny and 3d.
 - George focused on how to make slot machines addcitive. such as near wins, shorter spins for less rationality and increased speed, graophics and sounds and snimaltions that engage the brain, abiliti to stop reels early from interactivity, animation before win to increase anticipation people up and give greater hyoe and excitement when they win
+- Anlisa focused on some user reviews on google playstore and also, main background and load screen consistent picture, load has blur, share to facebook, personal records tracker , quests, daily login starter login rewards, basically some fo the structure that current mobile casino slots games go. like slot machine structure of taking the entire screen,levels, rotating games, character on the side.
