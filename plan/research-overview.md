@@ -3,21 +3,22 @@
 
 ### **Features**
 **Information/Jargon**
-- Return To Player (RTP) percentage, average of how much expect to get back when play in the long run
-- Volatility describes how that return is distributed across 
+- **Return To Player (RTP)** percentage, average of how much expect to get back when play in the long run
+- **Volatility** describes how that return is distributed across 
   - frequent small vs rare large payouts.
-- Two games can share similar RTP but feel very different depending on win frequency and jackpot rarity
-  
+
+- **Two games can share similar RTP but feel very different depending on win frequency and jackpot rarity**
 - 2 different machines, 
   - one high risk, occasionally payout, 
   - one low risk, more frequent payout
   
-- Mathematical edge to be profitable 
+- **Mathematical edge to be profitable**
   - (4% margin, spend 100 earn back 96)
 
-- RNG for slots, separate from past pulls.
-- Flashy fun animations, bright colorful lights and sounds that engage your brain and stimulate and excite people 
-- Rotating themes/limited games or unlockable themes
+- **RNG for slots, separate from past pulls.**
+- **Visuals** - Flashy fun animations, bright colorful lights and sounds that engage your brain and stimulate and excite people 
+
+- **Rotating themes/limited games or unlockable themes**
 
 **Social Features**
 - Referall and prizes to hook people in
@@ -90,7 +91,7 @@
 - **Losses disguised as wins** with **lights and noises**
   - keeps players engaged, trick people to think they're doing well
 
-- Trading real money for tokens to make them feel like they arent spending actual money
+- **Trading real money for tokens to make them feel like they arent spending actual money**
   - reduces psychological friction, make people spend more
 
 
