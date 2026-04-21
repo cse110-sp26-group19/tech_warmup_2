@@ -97,17 +97,19 @@
 
 ## User Interface Research (Domain Type Research)
 ### **General Interface Design**
-**Potential Home Page Interface**
+### **Potential Home Page Interface**
 - Main background into the scene and a loading screen with a blur on the main background
 
-**Slot Machine Interface**
-- Big Jackpot numbers visible at all times (Big and onscreen)
-- Balance always visible
-- (Mobile) Slot machine takes up most of the screen, and the button to spin is on the right side and the bet amount plus increase is on the left side
-  - other buttons are put to the side as icons, such as the info icon, clicked shows the payout info
-  - Usually shown in a Modal or slide in panel.
-- Session time display — shows how long the player has been playing
-- Net loss/gain tracker — always visible running total (not just current balance)
+### **Slot Machine Interface**
+- **Big Jackpot numbers** visible at all times (Big and onscreen)
+- **Balance** always visible
+- **Net loss/gain tracker** — always visible running total
+- - **Session time display** — shows how long the player has been playing
+- A clean layout keeps focus on spinning while secondary info (paytable, settings, stats) stays accessible but unobtrusive
+  - ie) slot machines in the center, with button to spin and bet manipulation buttons on opposite sides on the bottom of the screen
+  - other buttons are put to the side as icons, 
+      - Such as the info icon, clicked shows the paytable
+        - The paytable usually shown in a Modal or slide in panel.
 
 
 ### **Themes**
