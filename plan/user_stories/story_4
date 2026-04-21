@@ -1,0 +1,42 @@
+## User Story 4
+
+### Background & Backstory
+
+Priya Sharma is a 20 year old UCSD biology student who has never played a slot machine in her life, real or online. Her roommate showed her the game during a study break and she decided to try it. She has no frame of reference for how slot machines work, She doesn't know what paylines are, doesn't know what the symbols mean, and is mildly confused about why sometimes she wins and sometimes she doesn't even though the symbols look close together. She's curious and willing to learn, but she'll give up fast if the game doesn't explain itself. She's also a little self-conscious about not knowing the rules and doesn't want to feel dumb.
+
+### Goals
+
+- Understand the basic rules within the first 2–3 spins without reading the rules
+- Know what she's supposed to be matching and why
+- Feel like she has a basic grasp of the game before deciding if she likes it
+- Not feel embarrassed or lost
+
+### Motivations
+
+- She wants to understand what the hype is about slot machines
+- Wants to understand quickly so the game becomes fun rather than frustrating
+- If she gets it within a few minutes, she'll probably keep playing
+
+### Why She's Playing
+
+Priya is sitting on her dorm room bed at 9pm, laptop open. Her roommate just showed her the game on her own laptop and handed it over saying "just press the big button". Priya presses it, something happens, she's not sure if she won. She presses it again. She wants to understand what she's looking at.
+
+### Behavior
+
+- Reads on-screen text if it's short and clearly placed
+- Will tap an info button if it's obviously labeled
+- Loses interest within 3–5 spins if she still doesn't understand the rules
+- Asks her roommate for help before going to settings
+- Responds well to in game tooltips or brief popups
+
+### Priya's Story
+
+As a first-time player with no prior slot machine experience, I want to understand what I need to match to win and why I won or lost after each spin, so that I can learn the rules naturally through play without needing to read a separate tutorial.
+
+### Priya's Wishlist
+
+- On the very first spin, a brief popup highlights the winning payline and explains the match.
+- After every spin, the winning payline is visually highlighted on the reels so the player can see exactly what matched
+- A simple one-page paytable is accessible via a clearly labeled "?" or info button showing each symbol and its payout
+- The paytable uses icons and plain language. No gibberish like "scatter" or "wild" without a brief explanation
+- Loss spins show a neutral message rather than silence

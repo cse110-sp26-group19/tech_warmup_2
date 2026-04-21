@@ -1,0 +1,402 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f0ece4;
+    color: #1a1a1a;
+    padding: 24px;
+}
+
+/* ── Page Container ───────────────────────────────────────── */
+.page-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ── Shared Label Style (red text in wireframe) ───────────── */
+.slot-label,
+.section-label,
+.trigger-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #c0392b;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ── Machine Container ────────────────────────────────────── */
+.machine-container {
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #faf8f4;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Status Display ───────────────────────────────────────── */
+.status-display {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 18px 24px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* ── Slots Row ────────────────────────────────────────────── */
+.slots-row {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.slot {
+    flex: 1;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.symbol-card {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-top: 8px;
+}
+
+.symbol-card img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    transform: rotate(45deg);
+    /* rotate back so the image is upright inside diamond container */
+}
+
+/* Trigger / HIT Button Panel */
+.trigger-panel {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+#hit-button {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.1s;
+}
+
+#hit-button:hover {
+    background-color: #e8e8e8;
+}
+
+#hit-button:active {
+    transform: scale(0.94);
+    background-color: #d0d0d0;
+}
+
+/* ── Payments / Info ──────────────────────────────────────── */
+.payments-info {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background-color: #fff;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* Info / Risk Cards */
+.info-section {
+    flex: 1;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.risk-cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.risk-card {
+    flex: 1;
+    min-width: 90px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background-color: #fafafa;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.risk-card small {
+    font-weight: 400;
+    color: #555;
+    font-size: 0.7rem;
+}
+
+/* Token Bets */
+.token-bets {
+    flex: 1;
+    border: 2px solid #c0392b;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.token-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+#token-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    outline: none;
+}
+
+#token-input:focus {
+    border-color: #888;
+}
+
+.token-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.token-buttons button {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s;
+}
+
+.token-buttons button:hover {
+    background-color: #e8e8e8;
+}
+
+/* ── Payout / Balance ─────────────────────────────────────── */
+.payout-balance {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background-color: #fff;
+}
+
+.payout-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.balance-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 8px 14px;
+    background-color: #fafafa;
+    min-width: 200px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+#add-tokens-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.15s;
+}
+
+#add-tokens-button:hover {
+    background-color: #e8e8e8;
+}
+
+.winnings-display {
+    flex: 1;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 8px 14px;
+    background-color: #fafafa;
+    font-size: 0.95rem;
+    font-weight: 600;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+#cash-out-button {
+    padding: 10px 16px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.15s;
+    min-width: 70px;
+}
+
+#cash-out-button:hover {
+    background-color: #e8e8e8;
+}
+
+/* ── Rules / Additional Info ──────────────────────────────── */
+.rules-container {
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #faf8f4;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rules-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Symbols Legend Row */
+.symbols-legend {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Diamond shape for legend symbols */
+.diamond-symbol {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 8px;
+}
+
+.diamond-symbol img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transform: rotate(-45deg);
+}
+
+/* Multiplier Legend text block */
+.multiplier-legend {
+    margin-left: auto;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #333;
+    align-self: center;
+}
+
+.multiplier-legend p:first-child {
+    margin-bottom: 4px;
+}
+
+/* Rules & Legality text sections */
+.rules-text,
+.legality-text {
+    text-align: center;
+}
+
+.rules-text h2,
+.legality-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
