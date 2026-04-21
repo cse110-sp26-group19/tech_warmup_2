@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <h1 class="page-title">Slot Machine</h1>
+
+        <!-- Machine Container -->
+        <div class="machine-container">
+
+            <!-- Status Display -->
+            <div class="status-display">
+                <span id="status-message">Press HIT to spin!</span>
+            </div>
+
+            <!-- Slots Row + Trigger -->
+            <div class="slots-row">
+                <div class="slot" id="slot-1">
+                    <span class="slot-label">Slot 1</span>
+                    <div class="symbol-card">
+                        <!-- symbol1.jpg = Canopic Jar -->
+                        <img src="assets/symbol1.jpg" alt="Canopic Jar" id="symbol-1">
+                    </div>
+                </div>
+
+                <div class="slot" id="slot-2">
+                    <span class="slot-label">Slot 2</span>
+                    <div class="symbol-card">
+                        <!-- symbol2.jpg = Sacred Cat -->
+                        <img src="assets/symbol2.jpg" alt="Sacred Cat" id="symbol-2">
+                    </div>
+                </div>
+
+                <div class="slot" id="slot-3">
+                    <span class="slot-label">Slot 3</span>
+                    <div class="symbol-card">
+                        <!-- symbol3.jpg = Eye of Horus -->
+                        <img src="assets/symbol3.jpg" alt="Eye of Horus" id="symbol-3">
+                    </div>
+                </div>
+
+                <div class="trigger-panel">
+                    <span class="slot-label trigger-label">Trigger</span>
+                    <button id="hit-button">HIT</button>
+                </div>
+            </div>
+
+            <!-- Payments / Info -->
+            <div class="payments-info">
+
+                <div class="info-section">
+                    <span class="section-label">Info</span>
+                    <div class="risk-cards">
+                        <div class="risk-card" id="low-risk-card">
+                            <span>Low Risk Card</span>
+                            <small>Bet 1–250</small>
+                            <small>RTP ~96%</small>
+                        </div>
+                        <div class="risk-card" id="mid-risk-card">
+                            <span>Mid Risk Card</span>
+                            <small>Bet 251–750</small>
+                            <small>RTP ~70%</small>
+                        </div>
+                        <div class="risk-card" id="high-risk-card">
+                            <span>High Risk Card</span>
+                            <small>Bet 751–1000</small>
+                            <small>RTP ~20%</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="token-bets">
+                    <span class="section-label">Token Bets</span>
+                    <div class="token-controls">
+                        <input
+                            type="number"
+                            id="token-input"
+                            placeholder="Tokens / Input"
+                            min="1"
+                            max="1000"
+                        >
+                        <div class="token-buttons">
+                            <button id="token-increment" aria-label="Increase bet by 50">+</button>
+                            <button id="token-decrement" aria-label="Decrease bet by 50">−</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Payout / Balance -->
+            <div class="payout-balance">
+                <span class="section-label">Payout / Balance</span>
+                <div class="payout-row">
+
+                    <div class="balance-section">
+                        <span id="balance-amount">1000</span>
+                        <button id="add-tokens-button" aria-label="Buy more tokens">+</button>
+                    </div>
+
+                    <div class="winnings-display">
+                        <span id="winnings-amount">Winnings</span>
+                    </div>
+
+                    <button id="cash-out-button">Cash Out</button>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End Machine Container -->
+
+        <!-- Rules / Additional Info -->
+        <div class="rules-container">
+            <span class="section-label">Rules / Additional Info</span>
+
+            <div class="rules-content">
+
+                <div class="symbols-legend">
+                    <div class="legend-item">
+                        <!-- symbol1.jpg = Canopic Jar -->
+                        <div class="diamond-symbol">
+                            <img src="assets/symbol1.jpg" alt="Canopic Jar">
+                        </div>
+                        <span>× 1</span>
+                    </div>
+                    <div class="legend-item">
+                        <!-- symbol2.jpg = Sacred Cat -->
+                        <div class="diamond-symbol">
+                            <img src="assets/symbol2.jpg" alt="Sacred Cat">
+                        </div>
+                        <span>× 2</span>
+                    </div>
+                    <div class="legend-item">
+                        <!-- symbol3.jpg = Eye of Horus -->
+                        <div class="diamond-symbol">
+                            <img src="assets/symbol3.jpg" alt="Eye of Horus">
+                        </div>
+                        <span>× 4</span>
+                    </div>
+                    <div class="legend-item">
+                        <!-- symbol4.jpg = Cobra -->
+                        <div class="diamond-symbol">
+                            <img src="assets/symbol4.jpg" alt="Cobra">
+                        </div>
+                        <span>× 8</span>
+                    </div>
+                    <div class="legend-item">
+                        <!-- symbol5.jpg = Ankh -->
+                        <div class="diamond-symbol">
+                            <img src="assets/symbol5.jpg" alt="Ankh">
+                        </div>
+                        <span>× 16</span>
+                    </div>
+                    <div class="legend-item">
+                        <!-- symbol6.jpg = Pharaoh's Crown -->
+                        <div class="diamond-symbol">
+                            <img src="assets/symbol6.jpg" alt="Pharaoh's Crown">
+                        </div>
+                        <span>× Jackpot</span>
+                    </div>
+
+                    <div class="multiplier-legend">
+                        <p><strong>Risk × Multiplier</strong></p>
+                        <p>Rule set explained with house to player ratios</p>
+                        <p>IE Low = x1 (52/48)</p>
+                        <p>IE Mid = x2 (75/25)</p>
+                        <p>IE High = x4 (90/10)</p>
+                    </div>
+                </div>
+
+                <div class="rules-text">
+                    <h2>Rules Explained</h2>
+                    <!-- Placeholder: game rules content goes here -->
+                </div>
+
+                <div class="legality-text">
+                    <h2>Legality Stuff</h2>
+                    <!-- Placeholder: legal disclaimer content goes here -->
+                </div>
+
+            </div>
+        </div>
+        <!-- End Rules Container -->
+
+    </div>
+    <!-- End Page Container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
