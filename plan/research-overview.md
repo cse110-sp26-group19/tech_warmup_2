@@ -1,7 +1,7 @@
-## **Research Summary**
-### Domain Research
+# **Research Summary**
+## Domain Research
 
-#### **Features**
+### **Features**
 **Information/Jargon**
 - Return To Player (RTP) percentage, average of how much expect to get back when play in the long run
 - Volatility describes how that return is distributed across 
@@ -25,13 +25,13 @@
 
 - Potentially a person or character that guides you through a tutorial and cheers you on. or at least stays on the side. (DEPENDS ON GAME STYLE CHOSEN)
 
-#### General features
+### General features
 - Win/losses streak counter 
 - Tracks your personal record, and gives a congratulations or something on the side as beat your best first record notification
 - Spending limits — let players set a max loss before the game soft-locks
 - Cool-down prompts — after X spins, a "Take a break?" modal appears
 
-#### **Features for in terms of Coin bonuses**
+### **Features for in terms of Coin bonuses**
 - Daily bonus for log ins
   - daily quests, weekly free coins spins, daily coin login and muiltiplier collector, achievements
   - first starting the game, login rewards
@@ -39,14 +39,14 @@
 - Levels based on the bet amount
 
 
-#### **Special Mechanics**
+### **Special Mechanics**
 - Special mini game mode that excites player, known as the bonus buys, better odds to win large money or jackpot, creates excitement (Should be primary focus)
   - People play just for the bonus buy or pay or spin just to get the bonus buy faster
   - aesthetics same, payout differs, is higher
 
 - Wildball spins - once unlocked/ got, wait 2 hours to use
 
-#### **Slot Machines Functions?**
+### **Slot Machines Functions?**
 - **Game speed** and betting frequency (faster game speed, higher getting frequency)
   - Game spins take a short time allowing for people to spin more rapidly and think less rationally
 
@@ -73,7 +73,7 @@
 
 
 
-#### **Psychological Mechanism**
+### **Psychological Mechanism/ Features**
 - Unpredictable rewards payout 
   - to surprise users when they dont expect it
 
@@ -95,8 +95,8 @@
 
 
 
-### User Interface Research (Domain Type Research)
-#### **General Interface Design**
+## User Interface Research (Domain Type Research)
+### **General Interface Design**
 **Potential Home Page Interface**
 - Main background into the scene and a loading screen with a blur on the main background
 
@@ -110,7 +110,7 @@
 - Net loss/gain tracker — always visible running total (not just current balance)
 
 
-#### **Themes**
+### **Themes**
 - Fruit / Classic — simple, nostalgic, fast gameplay (cherries, seven, bars)
 
 - Asian Fortune / Dragon (e.g. Jinse Dao Dragon) — red and gold palette, dragon mascot, ornate reel frames, payout numbers displayed on symbols
@@ -119,10 +119,10 @@
   
 - Casino night (neon lights, city background)
 
-#### **Classic Symbols**
+### **Classic Symbols**
 - Coins, gold bar, gift box, clover, heart, gold coin, bomb, money bag, playing cards (hearts/spades), diamond, trophy, watermelon, grapes, cherries, orange, pineapple, apple, BAR, dice, star, lucky 7, poker chip
 
-#### **Slot Machine Types**
+### **Slot Machine Types**
 - Classic Slots (3 reels)
   - simple, traditional(cheery, bars etc), less flashy, consistent gameplay and clear win conditions
   - limited paylines
@@ -142,25 +142,25 @@
 - 3D slots (interactive and fun like a game) (Like video slots)
   - Animated characters, cinematic intros, rich visuals
 
-### User Research
-#### **User Types**
+## User Research
+### **User Types**
 - Casual players want quick fun
 - Grind players bet in small amounts and grind it out
 - Serious players want stats and big wins
   - Premium players bet in large amounts, access to aubstantial payrolls used to bet, benefit from free casino hotel rooms, meals and casino giveaways to keep them coming back for more.
 
-#### **Different User preferences**
+### **Different User preferences**
 - high stakes, low payout rate, more money at a time payed out
 - low stakes, high payout rate, less money at a time payed out
   
-#### **User Reviews**
+### **User Reviews**
 - many bad reviews were on the game being too money hungry
   - aka after one top-up, they double the price
   - gradually increasing the minimum bet and also very inconsistent winrates
 - The above are likely casual players that want quick fun, and do not like suspense and unpredicability
 
 
-## **Team Roster detailing Research Contribution**
+# **Team Roster detailing Research Contribution**
 - Omar researched on features such as return to player percentage and different machine types (hence different user types and perferences). General mechanics suchas RNG plus game speed and betting frequency. Psychological mechanics used on players such as unpredicatble rewards payout, illusion of control through interactivity, cognitive bias and illusion of patterns and losses disguised as wins. 
 - Abhay researched on themes (fantasy holdiday, fruits, asian fortune3), classic symbols used. Mathematical edge of their profit margins, referall, prizes, win animations, spin button addictive and is important and the psychological trick of trading money for crdits. Also some research on near miss effect and unpredictable win schedule, but already written down. 
 - Tybalt researched on a special mechanic that a lot of players really like called the bonus buys, its a special mode mini game that has same aesthectics but higher stakes/payouts. Some users pay to get there faster
