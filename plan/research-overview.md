@@ -40,7 +40,7 @@
 
 
 ### **Special Mechanics**
-- Special mini game mode that excites player, known as the bonus buys, better odds to win large money or jackpot, creates excitement (Should be primary focus)
+- **Special mini game** mode that excites player, known as the **bonus buys**, **better odds to win large money or jackpot**, creates excitement (Should be primary focus)
   - People play just for the bonus buy or pay or spin just to get the bonus buy faster
   - aesthetics same, payout differs, is higher
 
@@ -62,33 +62,33 @@
       - it increases tension and making the player focus on each individual result.
     - staggered reel stopping, synchronized sound effects, and slight delays
 
-- Each symbol on the slot machine has a different weight
+- **Each symbol** on the slot machine has a different weight
   - usually tuned so that small wins happen more often than big wins
 
 - **Payline Types**
-  - Center payline - only the center counts
-  - Multiplayline - Players can actvate 5,9,20 plus lines acroos diagonals
+  - **Center payline** - only the center counts
+  - **Multi-payline** - Players can actvate 5,9,20 plus lines acroos diagonals
     - Each active line costs an additional bet
-  - Ways-to-win - Any matching symbol in adjacent reels counts, no fixed lines. 
+  - **Ways-to-win** - Any matching symbol in adjacent reels counts, no fixed lines. 
 
 
 
 ### **Psychological Mechanism/ Features**
-- Unpredictable rewards payout 
+- **Unpredictable rewards payout**
   - to surprise users when they dont expect it
 
-- Illusion of control through interactivity 
+- **Illusion of control through interactivity**
     - ex) stop reel, pick bonus outcomes
     - ex) allow players to stop the reel early
 
-- Cognitive bias and illusion of patterns
-- Near miss effect (win but not quite), makes them want to play more
-  - ex) stop close near to a jackpot
-  - ex) almost win but with the last one off
+- Cognitive bias and **illusion of patterns**
+- **Near miss effect** (win but not quite), makes them want to play more
+  - **delay and buildup** make wins feel more rewarding and losses less immediate.
+    - ex) stop close near to a jackpot
+    - ex) almost win but with the last one off
   
-- Losses disguised as wins with lights and noises
+- **Losses disguised as wins** with **lights and noises**
   - keeps players engaged, trick people to think they're doing well
-  - delay and buildup make wins feel more rewarding and losses less immediate.
 
 - Trading real money for tokens to make them feel like they arent spending actual money
   - reduces psychological friction, make people spend more
@@ -105,7 +105,7 @@
 - **Balance** always visible
 - **Net loss/gain tracker** — always visible running total
 - - **Session time display** — shows how long the player has been playing
-- A clean layout keeps focus on spinning while secondary info (paytable, settings, stats) stays accessible but unobtrusive
+- A **clean layout** keeps focus on spinning while **secondary info (paytable, settings, stats) stays accessible but unobtrusive**
   - ie) slot machines in the center, with button to spin and bet manipulation buttons on opposite sides on the bottom of the screen
   - other buttons are put to the side as icons, 
       - Such as the info icon, clicked shows the paytable
@@ -125,23 +125,28 @@
 - Coins, gold bar, gift box, clover, heart, gold coin, bomb, money bag, playing cards (hearts/spades), diamond, trophy, watermelon, grapes, cherries, orange, pineapple, apple, BAR, dice, star, lucky 7, poker chip
 
 ### **Slot Machine Types**
-- Classic Slots (3 reels)
+- **Classic Slots** (3 reels)
   - simple, traditional(cheery, bars etc), less flashy, consistent gameplay and clear win conditions
   - limited paylines
-- Video Slots (5 reels plus)
+  
+- **Video Slots** (5 reels plus)
   - digital dsiplays and advanced graphics for storylines
   - Bonus features: Wilds, mini games and multipliers
   - mulitple paylines
-- Progressive Slots (attractive for users for life changing payments)
+
+- **Progressive Slots** (attractive for users for life changing payments)
   - small percentage of each wager contributes to jackpot pull
     - accumulates until luckly player wins all the accumulated money
-- Bonus Slots (Trigger: Specific Combo)
+
+- **Bonus Slots** (Trigger: Specific Combo)
   - Features interactive rounds & features beyond standard spins
     - Bonus icons, free spins, wheel spins, multipliers, pick-and-win
-- Penny slots 
+
+- **Penny slots**
   - low risk bets, like 30-50 cent mininum
     - bet increases when multiple paylines activated
-- 3D slots (interactive and fun like a game) (Like video slots)
+
+- **3D slots** (interactive and fun like a game) (Like video slots)
   - Animated characters, cinematic intros, rich visuals
 
 ## User Research
