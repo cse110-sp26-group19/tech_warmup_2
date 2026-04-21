@@ -1,0 +1,43 @@
+## User Story 1
+
+### Background & Backstory
+
+Eugene Krabs is a 40 year old regional sales manager from San Diego who has always been wired for competition. Growing up, he was the kid who kept meticulous score during baseball games and memorized his Little League batting average. Today, that same energy goes into his work. He tracks his quarterly numbers obsessively and celebrates every milestone, no matter how small. Eugene discovered online slot machines during a work trip to Vegas three years ago. He wasn't drawn in by the fantasy of getting rich, he genuinely enjoys the data of it. He screenshots his session results, keeps a note on his phone of his longest win streaks, and feels a real sense of satisfaction when he ends a session up. His wife thinks it's a little obsessive. He thinks it's just being informed.
+
+### Goals
+
+- Track every win, loss, and streak in real time during a session
+- Chase the feeling of being "on a hot run"
+- Hit at least one big win moment per session to feel like the session was worth it
+- Leave with a sense of whether he performed better or worse than last time
+
+### Motivations
+
+- The same competitive drive that makes him good at sales makes him engaged in slots. He wants to beat the machine, or at least feel like he came close
+- Streaks give him a narrative to attach to an otherwise random experience like "I was up 6 in a row before I bricked"
+- Big win animations give him a dopamine hit that validates the session
+- He's motivated by the story of a session as much as the outcome
+
+### Why He's Playing
+
+Eugene is killing an hour before a business dinner downtown. He's not here to gamble seriously. He just wants a quick, satisfying session that scratches the competitive itch. He'll play for 30–45 minutes, set a mental loss limit of $50, and walk away the moment he hits it. He opens the slot machine app on his phone while sitting at the hotel bar.
+
+### Behavior
+
+- Plays in short bursts — 15–20 spins, then checks his stats, then continues
+- Pays close attention to streaks even knowing they're random
+- Gets visibly more engaged during near-misses, leans forward, plays faster and harder
+- If he hits a big win early, he plays more conservatively after — he "protects the lead"
+- Will abandon a session that feels flat with no feedback or excitement
+
+### Eugene's Story
+
+As a competitive player who tracks outcomes and chases streaks, I want to see a live stats panel showing my win count, loss count, current streak, and net balance change for the session, so that I can follow my performance in real time and feel a sense of momentum or narrative during play.
+
+### Eugene's Wishlist
+
+- A persistent HUD display: wins, losses, current streak, and session net gain/loss
+- Stats update immediately after every spin result
+- Streak counter resets and flips to a loss streak counter when the pattern breaks
+- A "Personal Best Streak" indicator appears if the player beats their longest streak of the session
+- Big wins trigger a unique full-screen celebration animation with sound, visually different from a regular win

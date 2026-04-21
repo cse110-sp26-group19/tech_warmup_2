@@ -1,0 +1,42 @@
+## User Story 5
+
+### Background & Backstory
+
+Sandra Kim is a 35 year old elementary school teacher and single mom of two in Escondido. She plays browser slot games a couple evenings a week as a slight hobby and also to just have fun. It's one of the few things that's entirely hers after the kids are in bed. She genuinely enjoys it, but she's also financially careful. She's been mainpulated before by games that made it too easy to spend more than she intended, and she now approaches any gambling game with a cautious mindset. She sets a mental budget before every session and stops when she hits it, no exceptions. What she hates most is when a game obscures how much she's actually spent: vague coin counts, confusing exchange rates, or a UI that buries the real balance.
+
+### Goals
+
+- Always know exactly how much she has left and how much she's spent this session
+- Stay within her mental session budget without having to do mental math
+- Feel in control of her experience rather than like the game is trying to get as much money as possible out of her
+- End sessions on her own terms, not because she accidentally ran out
+
+### Motivations
+
+- The game is enjoyable because she keeps it controlled, losing control ruins it
+- Transparent financials make her trust the game, which makes her enjoy it more
+- She'll stay loyal to a game that feels honest and doesn't try to obscure spending
+
+### Why She's Playing
+
+Sandra is on the couch at 9:30pm, kids asleep, glass of wine on the coffee table. She has exactly 45 minutes before she needs to prep lunches for tomorrow. She opens her laptop with $200 in virtual coins, decides she'll stop at $180, and wants the app to help her stick to that without having to manually track it.
+
+### Behavior
+
+- Checks her balance frequently
+- Plays at a medium pace, not rushing
+- Gets uncomfortable when she can't easily see her running total
+- Will voluntarily stop playing if the UI helps make her loss clear rather than hiding it
+- Appreciates any feature that surfaces her session data without her having to dig for it
+
+### Sandra's Story
+
+As a budget conscious player who wants to stay in control of my session spending, I want to see my current balance, my starting balance, and my net session change displayed clearly at all times, so that I always know exactly where I stand and can make an informed decision about when to stop.
+
+### Sandra's Wishlist
+
+- A persistent HUD shows: current balance, session starting balance, and net change
+- Net change is color-coded: green for positive, red for negative, neutral for even
+- Balance updates in real time after every spin
+- An optional session limit feature allows the player to set a loss limit; when reached, a popup appears suggesting they take a break
+- The balance display is never hidden or obscured by win animations; it remains readable at all times

@@ -1,0 +1,43 @@
+## User Story 3
+
+### Background & Backstory
+
+Tyler Nguyen is a 26 year old software engineer at a mid-sized tech company in San Diego. He's smart, slightly restless, and always has his phone in his hand. He discovered the slot machine app through a Reddit thread and started playing it during his lunch break as a way to mentally check out for 15 minutes. He doesn't care about winning or losing. He just wants something to do that requires zero thought while he eats a sandwich at his desk. He's the kind of person who will immediately close an app if it takes more than 10 seconds to load or more than two taps to start playing.
+
+### Goals
+
+- Get into a game within seconds, no tutorial or setup required
+- Play at a fast, satisfying pace during a short break
+- Experience a quick dopamine hit or two before heading back to work
+- Not be interrupted by pop-ups, sign-in prompts, or slow load times
+
+### Motivations
+
+- He wants instant gratification with zero cognitive overhead
+- Fast spin animations and quick results keep him engaged during his break
+- A win notification gives him a small hit before an afternoon of ticket reviews
+- He'll come back if the game is fast and fun; he'll forget it exists if it's slow or clunky
+
+### Why He's Playing
+
+Tyler is at his desk, earbuds in, browser open in a tab behind his work ticket queue. He has exactly 12 minutes before his 1pm meeting. He wants to spin as many times as possible in that window, have a couple of exciting moments, and close the tab feeling like he had a real break.
+
+### Behavior
+
+- Plays at maximum speed, clicks spin the instant the previous animation ends
+- Uses the highest bet tier he can sustain for the rush of bigger swings
+- Pays zero attention to paytables or settings
+- Gets annoyed by any delay, loading state, or animation that can't be skipped
+- Will casually multitask: eating, reading Slack messages while spinning
+
+### Tyler's Story
+
+As a fast-paced casual player with limited time, I want to start spinning within one click of opening the app and have each spin resolve quickly with snappy animations, so that I can fit a satisfying number of spins into a short break without waiting around.
+
+### Tyler's Wishlist
+
+- The game loads directly into a playable state
+- Spin button is active and clickable immediately upon loading the page
+- Default spin animation completes in under 2 seconds
+- The spin button becomes clickable again the moment the result displays
+- A fast mode or reduced animation option is available for players who want even faster results
