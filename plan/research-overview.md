@@ -2,7 +2,11 @@
 ### Domain Research
 
 #### **Features**
-- (Info)Return to player percentage, average of how much expect to get back when play
+**Information/Jargon**
+- Return To Player (RTP) percentage, average of how much expect to get back when play in the long run
+- Volatility describes how that return is distributed across 
+  - frequent small vs rare large payouts.
+- Two games can share similar RTP but feel very different depending on win frequency and jackpot rarity
   
 - 2 different machines, 
   - one high risk, occasionally payout, 
@@ -11,17 +15,28 @@
 - Mathematical edge to be profitable 
   - (4% margin, spend 100 earn back 96)
 
-- Win/losses streak counter 
+- RNG for slots, separate from past pulls.
+- Flashy fun animations, bright colorful lights and sounds that engage your brain and stimulate and excite people 
+- Rotating themes/limited games or unlockable themes
 
+**Social Features**
+- Referall and prizes to hook people in
+  - Facebook shares on your wins
+
+- Potentially a person or character that guides you through a tutorial and cheers you on. or at least stays on the side. (DEPENDS ON GAME STYLE CHOSEN)
+
+#### General features
+- Win/losses streak counter 
+- Tracks your personal record, and gives a congratulations or something on the side as beat your best first record notification
+- Spending limits — let players set a max loss before the game soft-locks
+- Cool-down prompts — after X spins, a "Take a break?" modal appears
+
+#### **Features for in terms of Coin bonuses**
 - Daily bonus for log ins
   - daily quests, weekly free coins spins, daily coin login and muiltiplier collector, achievements
   - first starting the game, login rewards
   - mailbox that gives coins during special events and when you start
 - Levels based on the bet amount
-
-- RNG for slots, separate from past pulls.
-- Rotating themes/limited games or unlockable themes
-- Maybe consistent win rates but (IT DEPENDS ON THE USER TYPE)
 
 
 #### **Special Mechanics**
@@ -31,28 +46,31 @@
 
 - Wildball spins - once unlocked/ got, wait 2 hours to use
 
-- Game speed and betting frequency (faster game speed, higher getting frequency)
-- Game spins take a short time allowing for people to spin more rapidly and think less rationally
+#### **Slot Machines Functions?**
+- **Game speed** and betting frequency (faster game speed, higher getting frequency)
+  - Game spins take a short time allowing for people to spin more rapidly and think less rationally
 
-- Win animations wouldhave a lot of coins energy and color
+- **Win animations** wouldhave a lot of coins energy and color
   - Big flashing animations + sound effects
   - add animation that adds anticpation before a win to add further hype and excitement when they get the payout
 
-- Spin button animated and addictive + sound effects
-- Referall and prizes to hook people in
-  - Facebook shares on your wins
+- **Spin button** animated and addictive + sound effects
 
-- Reels spin and stop one by one slowly with a slight delay building suspense instead of immediately showing the result 
+- **Reels** spin and stop one by one slowly with a slight delay building suspense instead of immediately showing the result 
   - sound design: 
       - each reel stop is paired with a clicking or ticking sound
       - it increases tension and making the player focus on each individual result.
     - staggered reel stopping, synchronized sound effects, and slight delays
 
-- Flashy fun animations, bright colorful lights and sounds thatenagge your brain and stimulate and excite people 
+- Each symbol on the slot machine has a different weight
+  - usually tuned so that small wins happen more often than big wins
 
-- Potentially a person or character that guides you through a tutorial and cheers you on. or at least stays on the side. (DEPENDS ON GAME STYLE CHOSEN)
+- **Payline Types**
+  - Center payline - only the center counts
+  - Multiplayline - Players can actvate 5,9,20 plus lines acroos diagonals
+    - Each active line costs an additional bet
+  - Ways-to-win - Any matching symbol in adjacent reels counts, no fixed lines. 
 
-- Tracks your personal record, and gives a congratulations or something on the side as beat your best first record notification
 
 
 #### **Psychological Mechanism**
@@ -86,7 +104,11 @@
 - Big Jackpot numbers visible at all times (Big and onscreen)
 - Balance always visible
 - (Mobile) Slot machine takes up most of the screen, and the button to spin is on the right side and the bet amount plus increase is on the left side
-  - other buttons are put to the side as icons, such as the info icon, clicked shows the payout info.
+  - other buttons are put to the side as icons, such as the info icon, clicked shows the payout info
+  - Usually shown in a Modal or slide in panel.
+- Session time display — shows how long the player has been playing
+- Net loss/gain tracker — always visible running total (not just current balance)
+
 
 #### **Themes**
 - Fruit / Classic — simple, nostalgic, fast gameplay (cherries, seven, bars)
@@ -148,3 +170,4 @@
 - George focused on how to make slot machines addcitive. such as near wins, shorter spins for less rationality and increased speed, graophics and sounds and snimaltions that engage the brain, abiliti to stop reels early from interactivity, animation before win to increase anticipation people up and give greater hyoe and excitement when they win
 - Anlisa focused on some user reviews on google playstore and also, main background and load screen consistent picture, load has blur, share to facebook, personal records tracker , quests, daily login starter login rewards, basically some fo the structure that current mobile casino slots games go. like slot machine structure of taking the entire screen,levels, rotating games, character on the side.
 - Steven focused on slot machine design choices and distribution of wins. He highlighted how spin button emphasis, staggered reel timing, near-miss presentation, and clean UI affect engagement. He also connected weighted symbol probabilities, RTP, and volatility, including that two games can share similar RTP but feel very different based on frequency of small wins versus rare jackpots.
+- Eric reserached on symbol weights, payline types, win detection logic, common features such as session time display, net losses and gains tracker, spending limits and cool down prompts and also paytable UX patterns.
