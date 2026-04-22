@@ -1,3 +1,12 @@
+/* ── Font ────────────────────────────────────────────────── */
+@font-face {
+    font-family: 'Bubble';
+    src: url('assets/fonts/Bubble-Regular.otf') format('opentype'),
+         url('assets/fonts/Bubble-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ── Reset & Base ─────────────────────────────────────────── */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -6,7 +15,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Bubble', sans-serif;
     background-color: #f0ece4;
     color: #1a1a1a;
     padding: 24px;
