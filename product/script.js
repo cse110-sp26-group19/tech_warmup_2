@@ -47,6 +47,8 @@
     let jackpotPool = 69420420;
     let isSpinning = false;
 
+    const DEBUG = { forceJackpot: false }; // toggle to false to disable
+
     const reelStrips = { standard: [], highRisk: [] };
     const results = [null, null, null];
     let spinIntervals = [null, null, null];
@@ -78,9 +80,66 @@
     ];
 
     /* ================================================================
+       AUDIO
+       ================================================================ */
+    const SFX = {
+        music:   Object.assign(new Audio('assets/Sounds/sergequadrado-under-the-sea-109020.mp3'),   { loop: true, volume: 0.35 }),
+        bubble:  Object.assign(new Audio('assets/Sounds/soundreality-bubble-pop-424583.mp3'),        { volume: 0.28 }),
+        spin:    Object.assign(new Audio('assets/Sounds/freesound_community-spinning-reel-27903.mp3'), { loop: true, volume: 0.55 }),
+        hit:     Object.assign(new Audio('assets/Sounds/dragon-studio-button-press-382713.mp3'),     { volume: 0.7 }),
+        jackpot: Object.assign(new Audio('assets/Sounds/floraphonic-playful-casino-slot-machine-jackpot-3-183921.mp3'), { volume: 0.8 }),
+        splash:  Object.assign(new Audio('assets/Sounds/universfield-water-splash-02-352021.mp3'),   { volume: 0.6 }),
+        kaching: Object.assign(new Audio('assets/Sounds/ka-ching.mp3'), { volume: 0.75 }),
+    };
+
+    let audioUnlocked = false;
+    function unlockAudio() {
+        if (audioUnlocked) return;
+        audioUnlocked = true;
+        SFX.music.play().catch(() => {});
+    }
+    document.addEventListener('click', unlockAudio, { once: true });
+
+    function playSound(key) {
+        if (!audioUnlocked) return;
+        const s = SFX[key];
+        s.currentTime = 0;
+        s.play().catch(() => {});
+    }
+
+    function stopSound(key) {
+        const s = SFX[key];
+        s.pause();
+        s.currentTime = 0;
+    }
+
+    /* ================================================================
        HELPERS
        ================================================================ */
     function fmt(n) { return Math.floor(n).toLocaleString('en-US'); }
+
+    function stripWhite(src, threshold = 235) {
+        return new Promise(resolve => {
+            const img = new Image();
+            img.onload = () => {
+                const c = document.createElement('canvas');
+                c.width = img.naturalWidth; c.height = img.naturalHeight;
+                const ctx = c.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                const d = ctx.getImageData(0, 0, c.width, c.height);
+                for (let i = 0; i < d.data.length; i += 4) {
+                    if (d.data[i] > threshold && d.data[i+1] > threshold && d.data[i+2] > threshold)
+                        d.data[i+3] = 0;
+                }
+                ctx.putImageData(d, 0, 0);
+                resolve(c.toDataURL('image/png'));
+            };
+            img.src = src;
+        });
+    }
+
+    let jackpotImgSrc = 'assets/icons/Jackpot.png';
+    stripWhite(jackpotImgSrc).then(url => { jackpotImgSrc = url; });
 
     function getRiskTier(bet) {
         if (bet <= 250) return 'low';
@@ -100,18 +159,47 @@
     /* ================================================================
        UI UPDATES
        ================================================================ */
+    let _balFrom = 0;
+    let _balRaf = null;
+
     function updateBalance(animate) {
-        $balanceAmount.textContent = fmt(balance);
-        if (animate) {
-            $balanceAmount.classList.remove('bump', 'win-flash');
-            void $balanceAmount.offsetWidth;
-            $balanceAmount.classList.add('bump');
+        const to = balance;
+        if (!animate) {
+            if (_balRaf) { cancelAnimationFrame(_balRaf); _balRaf = null; }
+            $balanceAmount.textContent = fmt(to);
+            _balFrom = to;
+            return;
         }
+        const from = _balFrom;
+        const rising = to >= from;
+        const duration = Math.min(900, 120 + Math.abs(to - from) * 0.4);
+        const start = performance.now();
+        if (_balRaf) cancelAnimationFrame(_balRaf);
+
+        $balanceAmount.dataset.dir = rising ? 'up' : 'down';
+
+        function tick(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const cur = Math.round(from + (to - from) * eased);
+            $balanceAmount.textContent = fmt(cur);
+            $balanceAmount.classList.toggle('shuffling', t < 1);
+            if (t < 1) {
+                _balRaf = requestAnimationFrame(tick);
+            } else {
+                $balanceAmount.textContent = fmt(to);
+                $balanceAmount.classList.remove('shuffling');
+                _balFrom = to;
+                _balRaf = null;
+            }
+        }
+        _balRaf = requestAnimationFrame(tick);
+        _balFrom = to;
     }
 
     function flashBalanceGold() {
-        $balanceAmount.textContent = fmt(balance);
-        $balanceAmount.classList.remove('bump', 'win-flash');
+        updateBalance(true);
+        $balanceAmount.classList.remove('win-flash');
         void $balanceAmount.offsetWidth;
         $balanceAmount.classList.add('win-flash');
     }
@@ -128,6 +216,72 @@
         if (tier === 'high')   document.getElementById('high-risk-card').classList.add('active');
     }
 
+    function showJackpotWin(amount) {
+        playSound('jackpot');
+        playSound('splash');
+        let overlay = document.getElementById('jackpot-win-overlay');
+        if (overlay) overlay.remove();
+
+        overlay = document.createElement('div');
+        overlay.id = 'jackpot-win-overlay';
+        overlay.className = 'jackpot-win-overlay';
+        overlay.innerHTML = `
+            <div class="jackpot-img-glow"></div>
+            <img class="jackpot-win-image" src="${jackpotImgSrc}" alt="Jackpot">
+            <div class="jackpot-win-label">JACKPOT!!!</div>
+            <div class="jackpot-win-amount" id="jpw-amount">0</div>
+            <button class="jackpot-win-close">COLLECT WINNINGS</button>
+        `;
+        document.body.appendChild(overlay);
+
+        // coin rain
+        for (let i = 0; i < 60; i++) {
+            const coin = document.createElement('div');
+            coin.className = 'jp-coin';
+            const size = 18 + Math.random() * 22;
+            coin.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${Math.random() * 100}%;
+                animation-duration:${1.2 + Math.random() * 2}s;
+                animation-delay:${Math.random() * 3}s;
+                --spin:${Math.random() > 0.5 ? 360 : -360}deg;
+            `;
+            overlay.appendChild(coin);
+        }
+
+        // generate bubbles
+        for (let i = 0; i < 40; i++) {
+            const b = document.createElement('div');
+            b.className = 'jp-bubble';
+            const size = 10 + Math.random() * 40;
+            const drift = (Math.random() - 0.5) * 120;
+            b.style.cssText = `
+                width: ${size}px; height: ${size}px;
+                left: ${Math.random() * 100}%;
+                animation-duration: ${3 + Math.random() * 4}s;
+                animation-delay: ${Math.random() * 3}s;
+                --drift: ${drift}px;
+            `;
+            overlay.appendChild(b);
+        }
+
+        requestAnimationFrame(() => overlay.classList.add('show'));
+
+        // ka-ching bursts timed with coin rain
+        const kachingTimes = [300, 700, 1100, 1600, 2200, 2900];
+        kachingTimes.forEach(t => setTimeout(() => playSound('kaching'), t));
+
+        // start counter after label fades in
+        setTimeout(() => {
+            animateCount(document.getElementById('jpw-amount'), amount, 1800);
+        }, 1000);
+
+        overlay.querySelector('.jackpot-win-close').addEventListener('click', () => {
+            overlay.classList.remove('show');
+            setTimeout(() => overlay.remove(), 400);
+        });
+    }
+
     function updateJackpot() {
         const str = fmt(jackpotPool);
 
@@ -137,6 +291,27 @@
             showNumber = !showNumber;
             rippleJackpot(showNumber ? str : 'JACKPOT!!!');
         }, 2500);
+    }
+
+    function popJackpot() {
+        $jackpotText.classList.remove('popping');
+        void $jackpotText.offsetWidth;
+        $jackpotText.classList.add('popping');
+    }
+
+    function animateCount(el, to, duration = 1200) {
+        const start = performance.now();
+        el.classList.remove('counting');
+        void el.offsetWidth;
+        el.classList.add('counting');
+        function tick(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = fmt(to * eased);
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = fmt(to);
+        }
+        requestAnimationFrame(tick);
     }
 
     function rippleJackpot(newText) {
@@ -184,9 +359,12 @@
         hideError();
         clearHighlights();
 
+        playSound('hit');
+        playSound('spin');
+
         balance -= bet;
         totalWagered += bet;
-        updateBalance(false);
+        updateBalance(true);
 
         const tier = getRiskTier(bet);
         const strips = tier === 'high' ? reelStrips.highRisk : reelStrips.standard;
@@ -205,6 +383,7 @@
         setTimeout(() => stopReel(1), 2200);
         setTimeout(() => {
             stopReel(2);
+            stopSound('spin');
             setTimeout(() => resolveResult(bet, tier), 350);
         }, 3200);
     }
@@ -227,7 +406,20 @@
         let payout = 0;
         let winReels = [];
 
-        if (s0 === s1 && s1 === s2) {
+        if (DEBUG.forceJackpot || (s0 === 'trident' && s1 === 'trident' && s2 === 'trident')) {
+            const won = jackpotPool;
+            balance += won;
+            totalWon += won;
+            jackpotPool = 69420420;
+            winReels = [0, 1, 2];
+            winReels.forEach(i => $reels[i].classList.add('win-highlight'));
+            flashBalanceGold();
+            isSpinning = false;
+            $hitButton.disabled = false;
+            updateJackpot();
+            showJackpotWin(won);
+            return;
+        } else if (s0 === s1 && s1 === s2) {
             const sym = SYMBOLS[s0];
             payout = sym.value * 3 * sym.rarity * risk;
             winReels = [0, 1, 2];
@@ -247,6 +439,7 @@
 
             winReels.forEach(i => $reels[i].classList.add('win-highlight'));
 
+            playSound('kaching');
             flashBalanceGold();
         } else {
             jackpotPool += bet;
@@ -296,9 +489,9 @@
             });
         }
 
-        document.getElementById('co-balance').textContent = fmt(balance);
-        document.getElementById('co-wagered').textContent = fmt(totalWagered);
-        document.getElementById('co-won').textContent = fmt(totalWon);
+        animateCount(document.getElementById('co-balance'), balance);
+        animateCount(document.getElementById('co-wagered'), totalWagered);
+        animateCount(document.getElementById('co-won'),     totalWon);
         overlay.classList.add('show');
     }
 
@@ -347,6 +540,36 @@
     });
 
     $cashOut.addEventListener('click', cashOut);
+
+    /* ================================================================
+       BACKGROUND BUBBLES
+       ================================================================ */
+    (function spawnBubbles() {
+        const container = document.getElementById('bubble-bg');
+        if (!container) return;
+
+        function emit() {
+            const b = document.createElement('div');
+            b.className = 'jp-bubble';
+            const size = 6 + Math.random() * 22;
+            const duration = 7 + Math.random() * 12;
+            const drift = (Math.random() - 0.5) * 120;
+            b.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${Math.random() * 100}%;
+                animation-duration:${duration}s;
+                --drift:${drift}px;
+                opacity:${0.25 + Math.random() * 0.45};
+            `;
+            container.appendChild(b);
+            setTimeout(() => b.remove(), duration * 1000);
+        }
+
+        for (let i = 0; i < 18; i++) {
+            setTimeout(emit, Math.random() * 8000);
+        }
+        setInterval(emit, 600);
+    })();
 
     /* ================================================================
        BOOT
