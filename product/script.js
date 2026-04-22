@@ -5,12 +5,12 @@
        SYMBOLS — value is base payout, rarity is bonus for triples
        ================================================================ */
     const SYMBOLS = {
-        coral:     { name: "Tidecaller's Sapphire", icon: 'assets/icons/blue-jewel-icon-removebg-preview.png',  value: 50,  rarity: 1 },
-        pearl:     { name: "Siren's Emerald",       icon: 'assets/icons/green-jewel-icon-removebg-preview.png', value: 75,  rarity: 1.5 },
-        temple:    { name: 'Heart of the Abyss',    icon: 'assets/icons/pink-jewel-icon-removebg-preview.png',  value: 125, rarity: 2 },
-        leviathan: { name: 'The Sea King',           icon: 'assets/icons/poseidon-icon-removebg-preview.png',    value: 200, rarity: 3 },
-        crown:     { name: 'Crown of Atlantis',      icon: 'assets/icons/crown-icon-removebg-preview.png',       value: 400, rarity: 5 },
-        trident:   { name: "Poseidon's Trident",     icon: 'assets/icons/trident-icon-removebg-preview.png',     value: 750, rarity: 10 },
+        coral:     { name: "Tidecaller's Sapphire", icon: 'assets/icons/blue-gem.png',  value: 50,  rarity: 1 },
+        pearl:     { name: "Siren's Emerald",       icon: 'assets/icons/green-gem.png', value: 75,  rarity: 1.5 },
+        temple:    { name: 'Heart of the Abyss',    icon: 'assets/icons/pink-gem.png',  value: 125, rarity: 2 },
+        leviathan: { name: 'The Sea King',           icon: 'assets/icons/poseidon.png',  value: 200, rarity: 3 },
+        crown:     { name: 'Crown of Atlantis',      icon: 'assets/icons/crown.png',     value: 400, rarity: 5 },
+        trident:   { name: "Poseidon's Trident",     icon: 'assets/icons/trident.png',   value: 750, rarity: 10 },
     };
 
     const SYMBOL_KEYS = Object.keys(SYMBOLS);
@@ -21,11 +21,17 @@
     const STANDARD_COUNTS = { coral: 7, pearl: 7, temple: 6, leviathan: 5, crown: 3, trident: 2 };
     const HIGHRISK_COUNTS = { coral: 9, pearl: 7, temple: 6, leviathan: 5, crown: 1, trident: 2 };
 
+    /**
+     * Builds a shuffled reel strip from a symbol frequency map.
+     * @param {Object} counts - Map of symbol key → number of appearances on the strip.
+     * @returns {string[]} Shuffled array of symbol keys.
+     */
     function buildReelStrip(counts) {
         const strip = [];
         for (const [sym, count] of Object.entries(counts)) {
             for (let i = 0; i < count; i++) strip.push(sym);
         }
+        // Fisher-Yates shuffle
         for (let i = strip.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [strip[i], strip[j]] = [strip[j], strip[i]];
@@ -83,16 +89,18 @@
        AUDIO
        ================================================================ */
     const SFX = {
-        music:   Object.assign(new Audio('assets/Sounds/sergequadrado-under-the-sea-109020.mp3'),   { loop: true, volume: 0.35 }),
-        bubble:  Object.assign(new Audio('assets/Sounds/soundreality-bubble-pop-424583.mp3'),        { volume: 0.28 }),
-        spin:    Object.assign(new Audio('assets/Sounds/freesound_community-spinning-reel-27903.mp3'), { loop: true, volume: 0.55 }),
-        hit:     Object.assign(new Audio('assets/Sounds/dragon-studio-button-press-382713.mp3'),     { volume: 0.7 }),
-        jackpot: Object.assign(new Audio('assets/Sounds/floraphonic-playful-casino-slot-machine-jackpot-3-183921.mp3'), { volume: 0.8 }),
-        splash:  Object.assign(new Audio('assets/Sounds/universfield-water-splash-02-352021.mp3'),   { volume: 0.6 }),
-        kaching: Object.assign(new Audio('assets/Sounds/ka-ching.mp3'), { volume: 0.75 }),
+        music:   Object.assign(new Audio('assets/Sounds/background-music.mp3'),   { loop: true, volume: 0.35 }),
+        bubble:  Object.assign(new Audio('assets/Sounds/bubble-pop.mp3'),        { volume: 0.28 }),
+        spin:    Object.assign(new Audio('assets/Sounds/reel-spin.mp3'), { loop: true, volume: 0.55 }),
+        hit:     Object.assign(new Audio('assets/Sounds/button-press.mp3'),     { volume: 0.7 }),
+        jackpot: Object.assign(new Audio('assets/Sounds/jackpot.mp3'), { volume: 0.8 }),
+        splash:  Object.assign(new Audio('assets/Sounds/water-splash.mp3'),   { volume: 0.6 }),
+        kaching: Object.assign(new Audio('assets/Sounds/win-kaching.mp3'), { volume: 0.75 }),
     };
 
     let audioUnlocked = false;
+
+    /** Starts background music on the first user interaction (required by browser autoplay policy). */
     function unlockAudio() {
         if (audioUnlocked) return;
         audioUnlocked = true;
@@ -100,6 +108,10 @@
     }
     document.addEventListener('click', unlockAudio, { once: true });
 
+    /**
+     * Plays a sound from the SFX map, restarting it if already playing.
+     * @param {string} key - Key from the SFX object (e.g. 'spin', 'kaching').
+     */
     function playSound(key) {
         if (!audioUnlocked) return;
         const s = SFX[key];
@@ -107,6 +119,10 @@
         s.play().catch(() => {});
     }
 
+    /**
+     * Pauses a sound and resets its position.
+     * @param {string} key - Key from the SFX object.
+     */
     function stopSound(key) {
         const s = SFX[key];
         s.pause();
@@ -116,8 +132,16 @@
     /* ================================================================
        HELPERS
        ================================================================ */
+    /** Formats a number as a locale string with no decimals (e.g. 12345 → "12,345"). */
     function fmt(n) { return Math.floor(n).toLocaleString('en-US'); }
 
+    /**
+     * Removes near-white pixels from an image using a canvas, returning a transparent-background data URL.
+     * Used to clean the jackpot banner image before displaying it.
+     * @param {string} src - Image URL to process.
+     * @param {number} [threshold=235] - RGB channel value above which a pixel is treated as white.
+     * @returns {Promise<string>} Data URL of the processed image.
+     */
     function stripWhite(src, threshold = 235) {
         return new Promise(resolve => {
             const img = new Image();
@@ -138,19 +162,31 @@
         });
     }
 
-    let jackpotImgSrc = 'assets/icons/Jackpot.png';
+    // Pre-process the jackpot banner to remove its white background
+    let jackpotImgSrc = 'assets/icons/jackpot-banner.png';
     stripWhite(jackpotImgSrc).then(url => { jackpotImgSrc = url; });
 
+    /**
+     * Returns the risk tier for a given bet amount.
+     * @param {number} bet
+     * @returns {'low'|'medium'|'high'}
+     */
     function getRiskTier(bet) {
         if (bet <= 250) return 'low';
         if (bet <= 750) return 'medium';
         return 'high';
     }
 
+    /** Returns a random symbol key from SYMBOLS (uniform distribution, used during spin animation). */
     function randomSymbol() {
         return SYMBOL_KEYS[Math.floor(Math.random() * SYMBOL_KEYS.length)];
     }
 
+    /**
+     * Updates a reel's visible image to the given symbol.
+     * @param {number} i - Reel index (0–2).
+     * @param {string} key - Symbol key from SYMBOLS.
+     */
     function setSlot(i, key) {
         $slotImgs[i].src = SYMBOLS[key].icon;
         $slotImgs[i].alt = SYMBOLS[key].name;
@@ -159,9 +195,14 @@
     /* ================================================================
        UI UPDATES
        ================================================================ */
+    // Tracks the balance value the counter started from, used to interpolate animations
     let _balFrom = 0;
     let _balRaf = null;
 
+    /**
+     * Updates the displayed balance. When animated, smoothly counts from the previous value to the new one.
+     * @param {boolean} animate - If true, animate the count; if false, update instantly.
+     */
     function updateBalance(animate) {
         const to = balance;
         if (!animate) {
@@ -172,6 +213,7 @@
         }
         const from = _balFrom;
         const rising = to >= from;
+        // Duration scales with the delta so large jumps don't feel instant, capped at 900ms
         const duration = Math.min(900, 120 + Math.abs(to - from) * 0.4);
         const start = performance.now();
         if (_balRaf) cancelAnimationFrame(_balRaf);
@@ -180,7 +222,7 @@
 
         function tick(now) {
             const t = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - t, 3);
+            const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
             const cur = Math.round(from + (to - from) * eased);
             $balanceAmount.textContent = fmt(cur);
             $balanceAmount.classList.toggle('shuffling', t < 1);
@@ -197,13 +239,15 @@
         _balFrom = to;
     }
 
+    /** Animates the balance counter and triggers the gold win-flash CSS animation. */
     function flashBalanceGold() {
         updateBalance(true);
         $balanceAmount.classList.remove('win-flash');
-        void $balanceAmount.offsetWidth;
+        void $balanceAmount.offsetWidth; // force reflow to restart the animation
         $balanceAmount.classList.add('win-flash');
     }
 
+    /** Updates the SPIN button style and highlights the active risk card based on the current bet. */
     function updateTierDisplay() {
         const bet = parseInt($tokenInput.value) || 0;
         const tier = getRiskTier(bet);
@@ -216,6 +260,10 @@
         if (tier === 'high')   document.getElementById('high-risk-card').classList.add('active');
     }
 
+    /**
+     * Shows the full-screen jackpot win overlay with coin rain, bubbles, and a counting payout display.
+     * @param {number} amount - The jackpot amount won.
+     */
     function showJackpotWin(amount) {
         playSound('jackpot');
         playSound('splash');
@@ -282,6 +330,7 @@
         });
     }
 
+    /** Starts the jackpot ticker, alternating between the current pool value and "JACKPOT!!!" every 2.5s. */
     function updateJackpot() {
         const str = fmt(jackpotPool);
 
@@ -293,20 +342,27 @@
         }, 2500);
     }
 
+    /** Triggers the CSS pop/scale animation on the jackpot display. */
     function popJackpot() {
         $jackpotText.classList.remove('popping');
-        void $jackpotText.offsetWidth;
+        void $jackpotText.offsetWidth; // force reflow to restart the animation
         $jackpotText.classList.add('popping');
     }
 
+    /**
+     * Animates a number counting up from 0 to a target value inside a DOM element.
+     * @param {HTMLElement} el - Element whose text content will be updated.
+     * @param {number} to - Target value to count up to.
+     * @param {number} [duration=1200] - Animation duration in milliseconds.
+     */
     function animateCount(el, to, duration = 1200) {
         const start = performance.now();
         el.classList.remove('counting');
-        void el.offsetWidth;
+        void el.offsetWidth; // force reflow to restart the animation
         el.classList.add('counting');
         function tick(now) {
             const t = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - t, 3);
+            const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
             el.textContent = fmt(to * eased);
             if (t < 1) requestAnimationFrame(tick);
             else el.textContent = fmt(to);
@@ -314,6 +370,11 @@
         requestAnimationFrame(tick);
     }
 
+    /**
+     * Transitions the jackpot display to new text with a ripple animation.
+     * Text is swapped mid-animation so it appears to "wash in".
+     * @param {string} newText - The text to display after the ripple.
+     */
     function rippleJackpot(newText) {
         $jackpotText.classList.add('rippling');
 
@@ -326,13 +387,19 @@
         }, 750);
     }
 
+    /**
+     * Displays an error message in the result banner.
+     * @param {string} text - Message to show.
+     */
     function showError(text) {
         $resultBanner.className = 'result-banner show';
         $resultText.textContent = text;
     }
 
+    /** Hides the result/error banner. */
     function hideError() { $resultBanner.className = 'result-banner'; }
 
+    /** Removes the win-highlight CSS class from all three reels. */
     function clearHighlights() {
         $reels.forEach(el => el.classList.remove('win-highlight'));
     }
@@ -340,6 +407,7 @@
     /* ================================================================
        STRIPS
        ================================================================ */
+    /** Generates fresh shuffled reel strips for both standard and high-risk modes. */
     function generateStrips() {
         reelStrips.standard = [buildReelStrip(STANDARD_COUNTS), buildReelStrip(STANDARD_COUNTS), buildReelStrip(STANDARD_COUNTS)];
         reelStrips.highRisk = [buildReelStrip(HIGHRISK_COUNTS), buildReelStrip(HIGHRISK_COUNTS), buildReelStrip(HIGHRISK_COUNTS)];
@@ -348,6 +416,10 @@
     /* ================================================================
        SPIN
        ================================================================ */
+    /**
+     * Handles a spin attempt: validates the bet, deducts it, animates the reels,
+     * and schedules each reel to stop with a staggered delay before resolving the result.
+     */
     function spin() {
         const bet = parseInt($tokenInput.value) || 0;
         if (bet < 1 || bet > 1000) { showError('Bet must be 1 \u2013 1,000!'); return; }
@@ -367,18 +439,22 @@
         updateBalance(true);
 
         const tier = getRiskTier(bet);
+        // High-risk bets use a strip with fewer crown symbols for a lower jackpot hit chance
         const strips = tier === 'high' ? reelStrips.highRisk : reelStrips.standard;
 
+        // Pre-determine the outcome before the animation starts
         for (let r = 0; r < 3; r++) {
             results[r] = strips[r][Math.floor(Math.random() * strips[r].length)];
         }
 
+        // Start all three reels cycling through random symbols at 60ms intervals
         for (let r = 0; r < 3; r++) {
             $reels[r].classList.remove('stopped', 'landing');
             $reels[r].classList.add('spinning');
             spinIntervals[r] = setInterval(() => setSlot(r, randomSymbol()), 60);
         }
 
+        // Stop reels left-to-right with 1s gaps between each
         setTimeout(() => stopReel(0), 1200);
         setTimeout(() => stopReel(1), 2200);
         setTimeout(() => {
@@ -388,6 +464,10 @@
         }, 3200);
     }
 
+    /**
+     * Stops a single reel, snaps it to the pre-determined result symbol, and plays the landing animation.
+     * @param {number} i - Reel index (0–2).
+     */
     function stopReel(i) {
         clearInterval(spinIntervals[i]);
         spinIntervals[i] = null;
@@ -400,6 +480,18 @@
     /* ================================================================
        WIN DETECTION
        ================================================================ */
+    /**
+     * Evaluates the spin outcome and applies the payout (or feeds the jackpot pool on a loss).
+     *
+     * Payout rules:
+     *   - Three tridents → jackpot (entire pool)
+     *   - Three of a kind → value × 3 × rarity × risk multiplier
+     *   - Two of a kind (reels 0+1 or 1+2) → value × 2 × risk multiplier
+     *   - No match → bet is added to the jackpot pool
+     *
+     * @param {number} bet  - The amount wagered this spin.
+     * @param {string} tier - Risk tier: 'low', 'medium', or 'high'.
+     */
     function resolveResult(bet, tier) {
         const [s0, s1, s2] = results;
         const risk = RISK_MULTIPLIER[tier];
@@ -410,13 +502,15 @@
             const won = jackpotPool;
             balance += won;
             totalWon += won;
-            jackpotPool = 69420420;
+            jackpotPool = 69420420; // reset pool to default seed value
             winReels = [0, 1, 2];
             winReels.forEach(i => $reels[i].classList.add('win-highlight'));
             flashBalanceGold();
             isSpinning = false;
             $hitButton.disabled = false;
             updateJackpot();
+            // add popJackpot to show the jackpot win lint showed function wasnt being used / called - mig
+            popJackpot();
             showJackpotWin(won);
             return;
         } else if (s0 === s1 && s1 === s2) {
@@ -442,6 +536,7 @@
             playSound('kaching');
             flashBalanceGold();
         } else {
+            // No win — losing bets feed the jackpot pool
             jackpotPool += bet;
             updateJackpot();
         }
@@ -453,6 +548,11 @@
     /* ================================================================
        CASH OUT
        ================================================================ */
+    /**
+     * Displays the cash-out summary modal with animated final stats.
+     * The modal is created once and reused on subsequent calls.
+     * "Play Again" resets all state back to defaults.
+     */
     function cashOut() {
         if (isSpinning) return;
 
@@ -484,6 +584,7 @@
                 initReels();
             });
 
+            // Clicking the backdrop closes the modal
             overlay.addEventListener('click', (e) => {
                 if (e.target === overlay) overlay.classList.remove('show');
             });
@@ -498,6 +599,7 @@
     /* ================================================================
        INIT
        ================================================================ */
+    /** Generates reel strips and sets each reel to a random starting symbol. */
     function initReels() {
         generateStrips();
         for (let r = 0; r < 3; r++) {
@@ -511,6 +613,7 @@
        ================================================================ */
     $hitButton.addEventListener('click', spin);
 
+    // +/- buttons step the bet by 50, clamped to 1–1000
     $tokenInc.addEventListener('click', () => {
         let v = parseInt($tokenInput.value) || 0;
         $tokenInput.value = Math.min(v + 50, 1000);
@@ -525,6 +628,7 @@
         updateJackpot();
     });
 
+    // Clamp manual input to valid bet range
     $tokenInput.addEventListener('input', () => {
         let v = parseInt($tokenInput.value);
         if (isNaN(v)) return;
@@ -544,6 +648,11 @@
     /* ================================================================
        BACKGROUND BUBBLES
        ================================================================ */
+    /**
+     * IIFE that continuously emits floating bubble elements into the background container.
+     * Each bubble is randomly sized, positioned, and given a horizontal drift via a CSS variable.
+     * Bubbles remove themselves from the DOM when their animation completes.
+     */
     (function spawnBubbles() {
         const container = document.getElementById('bubble-bg');
         if (!container) return;
@@ -565,6 +674,7 @@
             setTimeout(() => b.remove(), duration * 1000);
         }
 
+        // Stagger an initial burst of bubbles across the first 8 seconds
         for (let i = 0; i < 18; i++) {
             setTimeout(emit, Math.random() * 8000);
         }

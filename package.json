@@ -1,0 +1,22 @@
+{
+  "name": "tech_warmup_2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.59.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0"
+  }
+}
