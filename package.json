@@ -6,7 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "playwright test test/e2e.test.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,15 @@
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
     "jest": "^30.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/test/**/*.test.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/test/e2e.test.js"
+    ]
   }
 }
