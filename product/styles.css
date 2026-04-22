@@ -16,9 +16,10 @@
 
 body {
     font-family: 'Bubble', sans-serif;
-    background-color: #f0ece4;
-    color: #1a1a1a;
+    background: linear-gradient(170deg, #0b1a3b 0%, #0d2b5e 30%, #134a6e 60%, #1b6b7a 100%);
+    color: #e0f0ff;
     padding: 24px;
+    min-height: 100vh;
 }
 
 /* ── Page Container ───────────────────────────────────────── */
@@ -32,18 +33,23 @@ body {
 
 .page-title {
     text-align: center;
-    font-size: 2.4rem;
+    font-size: 4rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    color: #7fdfff;
+    text-shadow:
+        0 0 14px rgba(127, 223, 255, 0.6),
+        0 0 40px rgba(127, 223, 255, 0.25),
+        0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* ── Shared Label Style (red text in wireframe) ───────────── */
+/* ── Shared Label Style ───────────────────────────────────── */
 .slot-label,
 .section-label,
 .trigger-label {
     display: block;
     font-size: 0.7rem;
-    color: #c0392b;
+    color: #c49bdb;
     font-weight: 600;
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -52,29 +58,49 @@ body {
 
 /* ── Machine Container ────────────────────────────────────── */
 .machine-container {
-    border: 2px solid #333;
-    border-radius: 12px;
+    border: 2px solid rgba(127, 223, 255, 0.3);
+    border-radius: 16px;
     padding: 20px;
-    background-color: #faf8f4;
+    background: linear-gradient(180deg, rgba(13, 43, 94, 0.9) 0%, rgba(11, 26, 59, 0.95) 100%);
+    backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
     gap: 16px;
+    box-shadow:
+        0 0 20px rgba(127, 223, 255, 0.08),
+        inset 0 1px 0 rgba(127, 223, 255, 0.1);
 }
 
-/* ── Status Display ───────────────────────────────────────── */
-.status-display {
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 18px 24px;
+/* ── Jackpot Display ─────────────────────────────────────── */
+.jackpot-display {
+    border: 2px solid rgba(212, 175, 55, 0.6);
+    border-radius: 12px;
+    padding: 24px 32px;
     text-align: center;
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    min-height: 70px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(19, 74, 110, 0.4) 100%);
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.15),
+        inset 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+.jackpot-text {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #ffd700;
+    text-shadow:
+        0 0 14px rgba(255, 215, 0, 0.6),
+        0 0 35px rgba(255, 215, 0, 0.25);
+    animation: jackpotPulse 2s ease-in-out infinite;
+}
+
+@keyframes jackpotPulse {
+    0%, 100% { opacity: 1; text-shadow: 0 0 14px rgba(255, 215, 0, 0.6), 0 0 35px rgba(255, 215, 0, 0.25); }
+    50% { opacity: 0.85; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.4); }
 }
 
 /* ── Slots Row ────────────────────────────────────────────── */
@@ -86,10 +112,10 @@ body {
 
 .slot {
     flex: 1;
-    border: 2px solid #333;
-    border-radius: 10px;
+    border: 2px solid rgba(127, 223, 255, 0.25);
+    border-radius: 12px;
     padding: 12px;
-    background-color: #fff;
+    background: linear-gradient(180deg, rgba(19, 74, 110, 0.6) 0%, rgba(11, 26, 59, 0.8) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,10 +127,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #333;
-    border-radius: 8px;
+    border: 2px solid rgba(127, 223, 255, 0.2);
+    border-radius: 10px;
     overflow: hidden;
-    background-color: #f5f5f5;
+    background: radial-gradient(circle, rgba(27, 107, 122, 0.3) 0%, rgba(11, 26, 59, 0.6) 100%);
     margin-top: 8px;
 }
 
@@ -113,15 +139,14 @@ body {
     height: 70%;
     object-fit: contain;
     transform: rotate(45deg);
-    /* rotate back so the image is upright inside diamond container */
 }
 
 /* Trigger / HIT Button Panel */
 .trigger-panel {
-    border: 2px solid #333;
-    border-radius: 10px;
+    border: 2px solid rgba(127, 223, 255, 0.25);
+    border-radius: 12px;
     padding: 12px;
-    background-color: #fff;
+    background: linear-gradient(180deg, rgba(19, 74, 110, 0.6) 0%, rgba(11, 26, 59, 0.8) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,29 +158,41 @@ body {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: 2px solid #333;
-    background-color: #fff;
+    border: 2px solid rgba(233, 119, 181, 0.6);
+    background: linear-gradient(135deg, #e977b5 0%, #c44fa0 50%, #a23a85 100%);
+    color: #fff;
+    font-family: 'Bubble', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.15s, transform 0.1s;
+    transition: all 0.2s ease;
+    box-shadow:
+        0 0 12px rgba(233, 119, 181, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 #hit-button:hover {
-    background-color: #e8e8e8;
+    background: linear-gradient(135deg, #f08dc4 0%, #d460b0 50%, #b34a95 100%);
+    box-shadow:
+        0 0 20px rgba(233, 119, 181, 0.5),
+        0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.04);
 }
 
 #hit-button:active {
     transform: scale(0.94);
-    background-color: #d0d0d0;
+    box-shadow:
+        0 0 8px rgba(233, 119, 181, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* ── Payments / Info ──────────────────────────────────────── */
 .payments-info {
-    border: 2px solid #333;
-    border-radius: 10px;
+    border: 2px solid rgba(127, 223, 255, 0.2);
+    border-radius: 12px;
     padding: 12px 16px;
-    background-color: #fff;
+    background: rgba(11, 26, 59, 0.6);
     display: flex;
     gap: 16px;
     align-items: flex-start;
@@ -164,7 +201,7 @@ body {
 /* Info / Risk Cards */
 .info-section {
     flex: 1;
-    border: 1px solid #bbb;
+    border: 1px solid rgba(127, 223, 255, 0.15);
     border-radius: 8px;
     padding: 10px 12px;
 }
@@ -178,30 +215,47 @@ body {
 .risk-card {
     flex: 1;
     min-width: 90px;
-    border: 2px solid #333;
+    border: 2px solid rgba(127, 223, 255, 0.2);
     border-radius: 8px;
     padding: 8px 10px;
     display: flex;
     flex-direction: column;
     gap: 3px;
-    background-color: #fafafa;
+    background: rgba(19, 74, 110, 0.4);
     font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
+    color: #c8e6ff;
+}
+
+#low-risk-card {
+    border-color: rgba(72, 199, 142, 0.5);
+    background: rgba(72, 199, 142, 0.1);
+}
+
+#mid-risk-card {
+    border-color: rgba(196, 160, 219, 0.5);
+    background: rgba(196, 160, 219, 0.1);
+}
+
+#high-risk-card {
+    border-color: rgba(233, 119, 181, 0.5);
+    background: rgba(233, 119, 181, 0.1);
 }
 
 .risk-card small {
     font-weight: 400;
-    color: #555;
+    color: rgba(200, 230, 255, 0.6);
     font-size: 0.7rem;
 }
 
 /* Token Bets */
 .token-bets {
     flex: 1;
-    border: 2px solid #c0392b;
+    border: 2px solid rgba(196, 160, 219, 0.4);
     border-radius: 8px;
     padding: 10px 12px;
+    background: rgba(196, 160, 219, 0.06);
 }
 
 .token-controls {
@@ -214,15 +268,22 @@ body {
 #token-input {
     flex: 1;
     padding: 8px 12px;
-    border: 2px solid #333;
+    border: 2px solid rgba(127, 223, 255, 0.25);
     border-radius: 6px;
+    font-family: 'Bubble', sans-serif;
     font-size: 0.95rem;
-    background-color: #fff;
+    background: rgba(11, 26, 59, 0.7);
+    color: #e0f0ff;
     outline: none;
 }
 
+#token-input::placeholder {
+    color: rgba(200, 230, 255, 0.4);
+}
+
 #token-input:focus {
-    border-color: #888;
+    border-color: rgba(127, 223, 255, 0.5);
+    box-shadow: 0 0 8px rgba(127, 223, 255, 0.15);
 }
 
 .token-buttons {
@@ -234,28 +295,31 @@ body {
 .token-buttons button {
     width: 32px;
     height: 32px;
-    border: 2px solid #333;
+    border: 2px solid rgba(127, 223, 255, 0.3);
     border-radius: 50%;
-    background-color: #fff;
+    background: rgba(19, 74, 110, 0.6);
+    color: #7fdfff;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.15s;
+    transition: all 0.15s;
 }
 
 .token-buttons button:hover {
-    background-color: #e8e8e8;
+    background: rgba(19, 74, 110, 0.9);
+    border-color: rgba(127, 223, 255, 0.5);
+    box-shadow: 0 0 8px rgba(127, 223, 255, 0.2);
 }
 
 /* ── Payout / Balance ─────────────────────────────────────── */
 .payout-balance {
-    border: 2px solid #333;
-    border-radius: 10px;
+    border: 2px solid rgba(127, 223, 255, 0.2);
+    border-radius: 12px;
     padding: 12px 16px;
-    background-color: #fff;
+    background: rgba(11, 26, 59, 0.6);
 }
 
 .payout-row {
@@ -269,21 +333,23 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    border: 2px solid #333;
+    border: 2px solid rgba(72, 199, 142, 0.35);
     border-radius: 8px;
     padding: 8px 14px;
-    background-color: #fafafa;
+    background: rgba(72, 199, 142, 0.08);
     min-width: 200px;
     font-size: 0.95rem;
     font-weight: 600;
+    color: #48c78e;
 }
 
 #add-tokens-button {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 2px solid #333;
-    background-color: #fff;
+    border: 2px solid rgba(72, 199, 142, 0.4);
+    background: rgba(72, 199, 142, 0.15);
+    color: #48c78e;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
@@ -291,52 +357,58 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: background-color 0.15s;
+    transition: all 0.15s;
 }
 
 #add-tokens-button:hover {
-    background-color: #e8e8e8;
+    background: rgba(72, 199, 142, 0.3);
+    box-shadow: 0 0 8px rgba(72, 199, 142, 0.2);
 }
 
 .winnings-display {
     flex: 1;
-    border: 2px solid #333;
+    border: 2px solid rgba(127, 223, 255, 0.2);
     border-radius: 8px;
     padding: 8px 14px;
-    background-color: #fafafa;
+    background: rgba(19, 74, 110, 0.3);
     font-size: 0.95rem;
     font-weight: 600;
     min-height: 42px;
     display: flex;
     align-items: center;
+    color: #c8e6ff;
 }
 
 #cash-out-button {
     padding: 10px 16px;
-    border: 2px solid #333;
+    border: 2px solid rgba(233, 119, 181, 0.5);
     border-radius: 8px;
-    background-color: #fff;
+    background: linear-gradient(135deg, rgba(233, 119, 181, 0.2) 0%, rgba(162, 58, 133, 0.2) 100%);
+    color: #f0a8d4;
+    font-family: 'Bubble', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     white-space: nowrap;
-    transition: background-color 0.15s;
+    transition: all 0.15s;
     min-width: 70px;
 }
 
 #cash-out-button:hover {
-    background-color: #e8e8e8;
+    background: linear-gradient(135deg, rgba(233, 119, 181, 0.35) 0%, rgba(162, 58, 133, 0.35) 100%);
+    box-shadow: 0 0 10px rgba(233, 119, 181, 0.2);
 }
 
 /* ── Rules / Additional Info ──────────────────────────────── */
 .rules-container {
-    border: 2px solid #333;
-    border-radius: 12px;
+    border: 2px solid rgba(127, 223, 255, 0.2);
+    border-radius: 16px;
     padding: 20px;
-    background-color: #faf8f4;
+    background: linear-gradient(180deg, rgba(13, 43, 94, 0.85) 0%, rgba(11, 26, 59, 0.95) 100%);
     display: flex;
     flex-direction: column;
     gap: 16px;
+    box-shadow: inset 0 1px 0 rgba(127, 223, 255, 0.08);
 }
 
 .rules-content {
@@ -360,20 +432,21 @@ body {
     gap: 8px;
     font-size: 0.85rem;
     font-weight: 600;
+    color: #c8e6ff;
 }
 
 /* Diamond shape for legend symbols */
 .diamond-symbol {
     width: 64px;
     height: 64px;
-    border: 2px solid #333;
+    border: 2px solid rgba(127, 223, 255, 0.3);
     border-radius: 6px;
     transform: rotate(45deg);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #fff;
+    background: radial-gradient(circle, rgba(27, 107, 122, 0.3) 0%, rgba(11, 26, 59, 0.6) 100%);
     margin: 8px;
 }
 
@@ -389,12 +462,13 @@ body {
     margin-left: auto;
     font-size: 0.8rem;
     line-height: 1.6;
-    color: #333;
+    color: rgba(200, 230, 255, 0.7);
     align-self: center;
 }
 
 .multiplier-legend p:first-child {
     margin-bottom: 4px;
+    color: #c49bdb;
 }
 
 /* Rules & Legality text sections */
@@ -407,5 +481,6 @@ body {
 .legality-text h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #7fdfff;
+    text-shadow: 0 0 8px rgba(127, 223, 255, 0.2);
 }
