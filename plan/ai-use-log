@@ -12,6 +12,8 @@ product
 src
 The new folder is product/.
 
+
+
 Prompt 2 : I sent you an image of our product that i wireframed so far, we'll work through implementing it but I want you to just get familiar with it.
 Logs:
 Got it! Here's what I'm seeing in the wireframe:
@@ -43,6 +45,8 @@ OUT
 (Bash completed with no output)
 The folder is empty — ready to start building whenever you are. Just let me know where you'd like to begin.
 
+
+
 Prompt 3: Here's the suggested data flow that I've written, tell me if it aligns with what we have so far on our UI design
 – INSERTED UI DESIGN FROM ABOVE HERE
 Logs: 
@@ -59,6 +63,8 @@ Jackpot — listed under persistent data, but it's unclear what it represents. I
 "Buy more tokens" (+) — the + button next to Balance in the wireframe looks like it adds tokens to balance, but your flow doesn't describe where those tokens come from (flat increment? purchase flow?).
 Summary: the flow is solid and covers 90% of the UI. The main thing to nail down before coding is: risk level as explicit tracked state, and clarifying what "Jackpot" and the balance + button actually do mechanically.
 
+
+
 Prompt 4: More Context based on our previous ruleset
 – Inserted rule set above here
 Logs:
@@ -72,6 +78,8 @@ The win check needs to know symbol positions, not just "did they match" — Medi
 Current Risk Tier (derived from bet) should probably be a computed/derived value, not manually tracked state.
 One concern: High Risk RTP is ~20%, which means a player almost always loses at high bets. That's intentional volatility, but the UI should probably make this very visible (the Info cards are doing that work).
 One gap: What does the + button next to Balance do — flat token top-up, or something else?
+
+
 
 Prompt 5: For context the + button next to balance allows us to add more tokens if the user gives fake payment info IE: student ID
 Logs
@@ -742,18 +750,13 @@ Then open http://localhost:8080 in your browser. Ctrl+C to stop it.
 
 BASIC TEMPLATE TO BUILD UPON
 
+
+
 Prompt 8 (reference image was given, not here)
 create a heart jewel create a 600x600 png pink coral icon that looks like a slot machine icon. make it shiny/bright, not to intricate, not too much.
 
-
-
-
-
 Prompt 9
 Make it glow & cartoony. dont do too much HD, too much intricate designs.
-
-
-
 
 Prompt 10
 Do the same design but with a blue diamond
