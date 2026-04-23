@@ -1,5 +1,4 @@
 Prompt 1 : I just made a brand new product folder can you identify it?
-
 Logs:
 Bash List files in working directory
 IN
@@ -10,11 +9,10 @@ docs
 final-report
 plan
 product
-
 src
 The new folder is product/.
-Prompt 2 : I sent you an image of our product that i wireframed so far, we'll work through implementing it but I want you to just get familiar with it.
 
+Prompt 2 : I sent you an image of our product that i wireframed so far, we'll work through implementing it but I want you to just get familiar with it.
 Logs:
 Got it! Here's what I'm seeing in the wireframe:
 Layout — two main sections:
@@ -46,7 +44,6 @@ OUT
 The folder is empty — ready to start building whenever you are. Just let me know where you'd like to begin.
 
 Prompt 3: Here's the suggested data flow that I've written, tell me if it aligns with what we have so far on our UI design
-
 – INSERTED UI DESIGN FROM ABOVE HERE
 Logs: 
 The data flow aligns well overall. A few observations:
@@ -63,9 +60,7 @@ Jackpot — listed under persistent data, but it's unclear what it represents. I
 Summary: the flow is solid and covers 90% of the UI. The main thing to nail down before coding is: risk level as explicit tracked state, and clarifying what "Jackpot" and the balance + button actually do mechanically.
 
 Prompt 4: More Context based on our previous ruleset
-
 – Inserted rule set above here
-
 Logs:
 Resolves earlier questions:
 Risk level is determined automatically by bet amount (0–250 = Low, 251–750 = Mid, 751–1000 = High) — no separate selection needed. The Low/Mid/High cards in the Info panel are likely just reference cards showing the tiers, not interactive selectors.
@@ -79,7 +74,6 @@ One concern: High Risk RTP is ~20%, which means a player almost always loses at 
 One gap: What does the + button next to Balance do — flat token top-up, or something else?
 
 Prompt 5: For context the + button next to balance allows us to add more tokens if the user gives fake payment info IE: student ID
-
 Logs
 Got it — so it's a mock "purchase" flow where the user enters a fake payment method (student ID) to top up their balance. That makes sense for a class project context.
 A few things this clarifies:
@@ -92,7 +86,6 @@ Ready to start building whenever — do you want to start with the HTML structur
 
 Prompt 6
 Okay I want you to implement all the HTML and CSS structure based on the image and context of information I just gave you, I wish to implement the Javascript logic separately as I include assets, sounds, and other features later. In the meantime, please at least include place holders on where assets could go IE symbol1, name it symbol1.jpg so on
-
 Logs
 I'll build out the full HTML and CSS structure now, matching the wireframe closely. Let me check the product folder first, then create the files.
 Bash Check product folder contents
@@ -730,9 +723,15 @@ symbol6.jpg   Pharaoh's Crown
 
 Both the slot panels and the rules legend reference these same files, so dropping them in the assets folder will populate both places at once. All interactive elements (HIT, +/−, Cash Out, Add Tokens) are present with IDs ready for JS hookup.
 
+
+
+
+
+
+
+
 Prompt 7
 How do I run a http server using python to test this out?
-
 Logs
 From the product/ directory:
 cd /home/nguyen/CSE110/tech_warmup_2/product
@@ -746,16 +745,21 @@ BASIC TEMPLATE TO BUILD UPON
 Prompt 8 (reference image was given, not here)
 create a heart jewel create a 600x600 png pink coral icon that looks like a slot machine icon. make it shiny/bright, not to intricate, not too much.
 
+
+
+
+
 Prompt 9
 Make it glow & cartoony. dont do too much HD, too much intricate designs.
 
-Prompt 10
 
+
+
+Prompt 10
 Do the same design but with a blue diamond
 
 Prompt 11
 Make it diamond shape please
-
 
 Prompt 12
 Use the same design & make green emerald with upside down triangle design
@@ -774,7 +778,6 @@ Use the same style icon to make Poseidon face. Make his face extend over a medal
 
 Prompt 17
 @product/assets/fonts I just added a new font, can we use this with our index.html?@product/index.html 
-
 Logs
 It looks like the product/assets/fonts/ directory exists but there are no font files in it yet. Could you add the font file(s) to that directory first? I need to know:
 The font file name (e.g., MyFont.ttf, CustomFont.woff2, etc.)
@@ -802,9 +805,13 @@ Applied the font site-wide by setting font-family: 'Bubble', sans-serif on the b
 
 The font will now render across the entire slot machine UI — the title, status display, buttons, labels, and all text. If you'd prefer the Bubble font only on specific elements (like just the title), let me know and I can adjust it.
 
+
+
+
+
+
 Prompt 18
 Okay let's start building out this whole slow machine, let's start with putting the name at the top let's go with Journey to Atlantis. The current Press Hit To Spin should actually be the jackpot indicator, let's try to make it loook oceany and make the overall UI look oceany, a mixture of blues, green,s pink, and purples would be lovely with majority blue like the sea
-
 Logs
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Slot Machine</title>
@@ -856,9 +863,11 @@ Labels — soft purple (#c49bdb) replacing the old red
 Rules section — same deep ocean glass panel, with cyan headings that softly glow
 The overall palette is majority deep blues with accents of teal, cyan, purple/lavender, pink, and gold — giving it that underwater Atlantis treasure feel
 
+
+
+
 Prompt 19
 So the thing stilll says slot machine it hsould say Journey to Atlantis and the pres hit to spin gain should be the jackpot, I think it hsould flicker back and forth between jackpot!!! and the amount and it should be noticably larger for both of these text
-
 Logs:
 The HTML is actually correct — it does say "Journey to Atlantis" and has the jackpot display. You might be seeing a cached version. But let me address your requests: make both texts noticeably larger, and add the flickering effect between "JACKPOT!!!" and the amount. Let me check the script file too.
    text-align: center;
@@ -913,6 +922,9 @@ Jackpot display — now a single large gold text element (3rem, bold) that flick
 script.js — simple setInterval that toggles the text content back and forth.
 Try a hard refresh (Ctrl+Shift+R) if you're still seeing the old version — that'll clear any cached files.
 
+
+
+
 Prompt 20
 @product/assets/fonts/Bubble-w10MZ.otf
 I wannt use this font instead it's more readable
@@ -926,7 +938,6 @@ Done — swapped the @font-face source to Bubble-w10MZ.otf. Since the font-famil
 
 Prompt 21
 So all the core structure and layout is here, but it's really hard to read, I want it width wise to fill up 80% of the screen, feel free to adjust the UI as you think looks good but ensure that all the information and layout that I initially included is still here please
-
 Logs
 The main readability problem is the 960px max-width cap and small font sizes throughout. I'll widen it to 80% of the viewport and bump up all the text sizes, spacing, and interactive element sizes so everything is comfortable to read at the wider layout.
    color: #e0f0ff;
@@ -969,7 +980,6 @@ All existing content — jackpot, slots, risk cards, token bets, payout/balance,
 
 Prompt 22
 Okay build out the whole slot machine and make it functional.
-
 Logs
 I found 6 icon files that map perfectly to the 6 symbols:
 Symbol
@@ -1075,9 +1085,9 @@ Winnings display flashes on win
 
 
 
+
 Prompts 23
 Wait the slot machines shouldn't be showing a grid, it should just show a row of 3 icons and then a spin animation changing them no? It should then stop from left to right with sequentially
-
 Logs
 You're right — a classic 3-wheel slot machine shows just one row of 3 symbols, not a 3×3 grid. The spin animation cycles through symbols rapidly, then each reel stops left to right revealing the final symbol. Let me rework this.
 Since we're going from a 3××3 grid to a single row of 3, the payline system simplifies to just the one center line. Let me update all three files.
@@ -1147,6 +1157,10 @@ Win check is now a straight comparison of the 3 symbols: 3-match, then 2-match (
 High-risk special combo (2 Trident + 1 Crown) still works
 Much cleaner — one row of 3 big icons, spinning left-to-right stop, just like a classic slot machine.
 
+
+
+
+
 Prompt 24
 I feel like it's too zoomed into the slot machine now and instead these icons I wish them to be shown vertically instead to the right of the slow machine as well as their like values
 Like low rarity is cheaper than higher rarity if you get 3 in a row of them
@@ -1201,6 +1215,11 @@ Example: 2 Coral at Low Risk = 50 × 2 × 1 = 100 tokens
 3 in a row (all 3 match): value × 3 × rarity_bonus × risk_multiplier
 Example: 3 Trident at High Risk = 750 × 3 × 10 × 4 = 90,000 tokens
 Risk cards now just show the multiplier (×1, ×2, ×4) — no more RTP percentages. All 6 symbols pay out now, including Pearl of the Abyss.
+
+
+
+
+
 
 Prompt 25
 I feel like the symbol values should be easier to see and read, maybe use the original bubble-regular font, also remove reel 1 2 and 3 and symbol values label, the 2 in a row and 3 in a row shoudl be explained in the rules below, token bets, I feel like it should be more obvious how many tokens you're betting, let's maybe move it into where the hit is and remove the trigger label.
@@ -1263,6 +1282,10 @@ Balance bump animation — scales up and flashes cyan when tokens are added
 Winnings pop animation — scales up gold when you win
 Easy to see at a glance
 Risk tiers are now compact pills below the balance bar, with the active one highlighted in its tier color.
+
+
+
+
 
 
 Prompt 26
@@ -1338,6 +1361,11 @@ The weapon that split continents
 
 These appear in a lore grid in the rules section with bigger icons (80px), their name, rarity badge, value, and a short lore paragraph. The "How to Play" section with win formulas remains below that. All game mechanics (reel strips, spin, win detection, payouts, risk tiers) are completely unchanged.
 
+
+
+
+
+
 Prompt 27
 I want this to be aligned vertically to the right within the slow machine
 IE
@@ -1369,6 +1397,11 @@ Right: Symbol values panel, top-aligned (not centered), showing icons from highe
 Bigger slots -- The reel window now fills the cabinet width minus the bet column, with min-height: 220px and 90% image sizing so the symbols are much more prominent.
 Number spinners removed -- The default browser arrows on the input are hidden via -webkit-appearance: none and -moz-appearance: textfield.
 JS updates -- Removed the now-nonexistent #current-tier element reference and changed .risk-pill selector to .risk-card to match the new HTML class names.
+
+
+
+
+
 
 Prompt 28
 okay this is good, I think the jackpot should initially be higher and the win and the jackpotshould be a ripple effect from left to right and bounce auatic colors before sitching to the number, I also think the number should be much larger. The win shouldn't highlight the actual symbol but rather that box they are contained in, SLOT 1 | Slot 2 | Slot 3
@@ -1418,6 +1451,11 @@ Win highlights on reel boxes -- The glow now covers the entire .reel slot column
 Subtle win feedback -- No more result banner text for wins. Instead, when you win, the balance number flashes gold (scales up briefly) and smoothly transitions back to green over 1.2 seconds. The "Last Win" display was removed entirely for a cleaner balance bar.
 Error messages only -- The result banner is now only used for error states (invalid bet, not enough tokens), keeping the slot area clean during normal play.
 Matching glass theme -- The cash out button, bet +/- buttons, token input, and the cash out modal all received the same frosted ocean glass treatment for visual consistency.
+
+
+
+
+
 
 Prompt 29
 okay the jackpot text should be a little smaller and less yellow, focus on using for oceany colors / pink / purples
@@ -1476,18 +1514,12 @@ Jackpot pool starts at 69,420,420 -- Every time you lose a spin, the bet amount 
 Slot symbols scaled up -- Image sizing changed from 80%/85% to 100%/100%, filling much more of each reel column.
 Win highlight fix -- Reel padding reduced from 12px to 8px so the background highlight covers consistently from top to bottom. The highlight fills the full reel column evenly now.
 
+
+
+
+
 Prompt 30
 Switch everything to the starborn font please
-
-
-
-
-
-
-
-
-
-
 
 
 
