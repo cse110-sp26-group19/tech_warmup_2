@@ -1526,3 +1526,59 @@ Switch everything to the starborn font please
 
 
 
+Prompt 31:
+Do the unit testing and use jest for it, put the unit tests in the test folder
+
+Logs:
+First, I'll expand the pure game logic module so we have real functionality to unit test. The logic mirrors what's in product/script.js but as pure, side-effect-free functions.
+Now I'll write comprehensive Jest unit tests, replacing the stub test file and splitting the suite by function for clarity.
+Now I'll configure Jest to only run unit tests (not the Playwright e2e file) and add a separate e2e script.
+Now I'll install dependencies and run the test suite to verify everything passes.
+All 39 tests pass across 5 test suites.
+Done. Here's a summary of what I set up.
+Pure, testable game logic
+I expanded src/game/gameLogic.js so the core slot-machine rules live in a side-effect-free module that mirrors what product/script.js does in the browser. It now exports:
+
+Constants: SYMBOLS, SYMBOL_KEYS, STANDARD_COUNTS, HIGHRISK_COUNTS, RISK_MULTIPLIER, DEFAULT_JACKPOT_SEED
+calculatePayout(bet, multiplier) (kept)
+getRiskTier(bet) — 'low' | 'medium' | 'high'
+getRiskMultiplier(tier)
+buildReelStrip(counts, rng?) — accepts an injectable RNG so tests can be deterministic
+evaluateSpin(results, bet, tier, jackpotPool) — returns { payout, winReels, isJackpot, newJackpotPool }, covering jackpot, 3-of-a-kind, 2-of-a-kind (0+1 or 1+2), and no-win (bet feeds the pool)
+Jest unit tests in test/ (39 tests, 5 suites)
+test/gameLogic.test.js — sanity checks on constants (symbol set, rarity ordering, risk multiplier ordering, high-risk strip has fewer crowns)
+test/calculatePayout.test.js — zero bet/multiplier, fractional multipliers, large values, negative multipliers
+test/getRiskTier.test.js — boundary cases at 250/251 and 750/751, plus getRiskMultiplier
+test/buildReelStrip.test.js — length, frequency preservation, empty input, only valid keys, determinism with an injected RNG, no mutation of input
+test/evaluateSpin.test.js — jackpot, 3-of-a-kind with risk multiplier, fractional-payout flooring, 2-of-a-kind on reels 0+1 and 1+2, the "reels 0+2 with different middle" non-win case, no-win accumulation into the pool, and input validation
+Jest / Playwright separation
+The folder already contained test/e2e.test.js which uses Playwright (not Jest). I configured Jest in package.json to only pick up test/**/*.test.js and ignore test/e2e.test.js, and added a test:e2e script:
+
+package.jsonLines 15-24 
+"jest": {
+"testEnvironment": "node",
+"testMatch": [
+"<rootDir>/test/**/*.test.js"
+],
+"testPathIgnorePatterns": [
+"/node_modules/",
+"<rootDir>/test/e2e.test.js"
+]
+}
+Running the tests
+npm install
+npm test
+Output:
+
+Test Suites: 5 passed, 5 total
+Tests: 39 passed, 39 total
+ 
+Prompt 32: 
+can you put the test results of all the tests you ran into test-results/ .last-run.json just follow the template shown
+Logs: 
+Updated test-results/.last-run.json following the existing template. Since all 39 Jest tests across 5 suites passed, status is "passed" and failedTests is empty:
+
+.last-run.jsonLines 1-4{
+"status": "passed",
+"failedTests": []
+}
