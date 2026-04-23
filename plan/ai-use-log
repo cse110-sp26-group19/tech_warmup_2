@@ -1,12 +1,10 @@
-### Prompt 1 : I just made a brand new product folder can you identify it?
+Prompt 1 : I just made a brand new product folder can you identify it?
 
-**Logs:**
+Logs:
 Bash List files in working directory
-```
 IN
 ls /home/nguyen/CSE110/tech_warmup_2
 OUT
-```
 README.MD
 docs
 final-report
@@ -14,12 +12,10 @@ plan
 product
 
 src
-```
 The new folder is product/.
-```
-### Prompt 2 : I sent you an image of our product that i wireframed so far, we'll work through implementing it but I want you to just get familiar with it.
+Prompt 2 : I sent you an image of our product that i wireframed so far, we'll work through implementing it but I want you to just get familiar with it.
 
-**Logs:**
+Logs:
 Got it! Here's what I'm seeing in the wireframe:
 Layout — two main sections:
 Machine Container (top)
@@ -49,10 +45,10 @@ OUT
 (Bash completed with no output)
 The folder is empty — ready to start building whenever you are. Just let me know where you'd like to begin.
 
-### Prompt 3: Here's the suggested data flow that I've written, tell me if it aligns with what we have so far on our UI design
+Prompt 3: Here's the suggested data flow that I've written, tell me if it aligns with what we have so far on our UI design
 
 – INSERTED UI DESIGN FROM ABOVE HERE
-**Logs:** 
+Logs: 
 The data flow aligns well overall. A few observations:
 Matches cleanly:
 All containers map 1:1 with the wireframe labels
@@ -66,11 +62,11 @@ Jackpot — listed under persistent data, but it's unclear what it represents. I
 "Buy more tokens" (+) — the + button next to Balance in the wireframe looks like it adds tokens to balance, but your flow doesn't describe where those tokens come from (flat increment? purchase flow?).
 Summary: the flow is solid and covers 90% of the UI. The main thing to nail down before coding is: risk level as explicit tracked state, and clarifying what "Jackpot" and the balance + button actually do mechanically.
 
-### Prompt 4: More Context based on our previous ruleset
+Prompt 4: More Context based on our previous ruleset
 
 – Inserted rule set above here
 
-**Logs:**
+Logs:
 Resolves earlier questions:
 Risk level is determined automatically by bet amount (0–250 = Low, 251–750 = Mid, 751–1000 = High) — no separate selection needed. The Low/Mid/High cards in the Info panel are likely just reference cards showing the tiers, not interactive selectors.
 Multiplier isn't a single value — it's a lookup against a combination table per risk tier. The data flow's "Multiplier Based on Token Bet" is really "Payout Table Based on Risk Tier."
@@ -82,7 +78,7 @@ Current Risk Tier (derived from bet) should probably be a computed/derived value
 One concern: High Risk RTP is ~20%, which means a player almost always loses at high bets. That's intentional volatility, but the UI should probably make this very visible (the Info cards are doing that work).
 One gap: What does the + button next to Balance do — flat token top-up, or something else?
 
-### Prompt 5: For context the + button next to balance allows us to add more tokens if the user gives fake payment info IE: student ID
+Prompt 5: For context the + button next to balance allows us to add more tokens if the user gives fake payment info IE: student ID
 
 Logs
 Got it — so it's a mock "purchase" flow where the user enters a fake payment method (student ID) to top up their balance. That makes sense for a class project context.
@@ -94,7 +90,7 @@ This also means Current Balance is the one piece of persistent data that can inc
 Ready to start building whenever — do you want to start with the HTML structure, the JS game logic, or the CSS layout first?
 
 
-### Prompt 6
+Prompt 6
 Okay I want you to implement all the HTML and CSS structure based on the image and context of information I just gave you, I wish to implement the Javascript logic separately as I include assets, sounds, and other features later. In the meantime, please at least include place holders on where assets could go IE symbol1, name it symbol1.jpg so on
 
 Logs
@@ -734,7 +730,7 @@ symbol6.jpg   Pharaoh's Crown
 
 Both the slot panels and the rules legend reference these same files, so dropping them in the assets folder will populate both places at once. All interactive elements (HIT, +/−, Cash Out, Add Tokens) are present with IDs ready for JS hookup.
 
-### Prompt 7
+Prompt 7
 How do I run a http server using python to test this out?
 
 Logs
@@ -747,36 +743,36 @@ Then open http://localhost:8080 in your browser. Ctrl+C to stop it.
 
 BASIC TEMPLATE TO BUILD UPON
 
-### Prompt 8 (reference image was given, not here)
+Prompt 8 (reference image was given, not here)
 create a heart jewel create a 600x600 png pink coral icon that looks like a slot machine icon. make it shiny/bright, not to intricate, not too much.
 
-### Prompt 9
+Prompt 9
 Make it glow & cartoony. dont do too much HD, too much intricate designs.
 
-### Prompt 10
+Prompt 10
 
 Do the same design but with a blue diamond
 
-### Prompt 11
+Prompt 11
 Make it diamond shape please
 
 
-### Prompt 12
+Prompt 12
 Use the same design & make green emerald with upside down triangle design
 
-### Prompt 13
+Prompt 13
 Use the same style (gemstone, gold filament design), but make it circular instead of diamond. Continue having the gold swirls and the gemstone facet on the circular design. Place a gold trident over the circular design & keep the shine and glow for the aura.
 
-### Prompt 14
+Prompt 14
 Make it another random color besides blue, pink/red, and green and change the trident to gold
 
-### Prompt 15
+Prompt 15
 Now do the same style but instead of a trident, do an Atlantis/Ocean looking crown. Keep the circular medallion and make the gemstone color another color besides blue, pink/red, green, and purple. Make sure it fills the entire circular medallion and continue having the golden swirls as gold. Do not make the crown look too intricate. Add some jewelry on the crown.
 
-### Prompt 16
+Prompt 16
 Use the same style icon to make Poseidon face. Make his face extend over a medallion that looks like he's in the ocean in the background. Make sure Poseidon's face has a beard & has his golden crown. Make his hair & beard white. Make his eyes shine blue. 600x600png & white background. Continue having the golden swirls & outline & make it a tad more gold.
 
-### Prompt 17
+Prompt 17
 @product/assets/fonts I just added a new font, can we use this with our index.html?@product/index.html 
 
 Logs
@@ -806,7 +802,7 @@ Applied the font site-wide by setting font-family: 'Bubble', sans-serif on the b
 
 The font will now render across the entire slot machine UI — the title, status display, buttons, labels, and all text. If you'd prefer the Bubble font only on specific elements (like just the title), let me know and I can adjust it.
 
-### Prompt 18
+Prompt 18
 Okay let's start building out this whole slow machine, let's start with putting the name at the top let's go with Journey to Atlantis. The current Press Hit To Spin should actually be the jackpot indicator, let's try to make it loook oceany and make the overall UI look oceany, a mixture of blues, green,s pink, and purples would be lovely with majority blue like the sea
 
 Logs
@@ -860,7 +856,7 @@ Labels — soft purple (#c49bdb) replacing the old red
 Rules section — same deep ocean glass panel, with cyan headings that softly glow
 The overall palette is majority deep blues with accents of teal, cyan, purple/lavender, pink, and gold — giving it that underwater Atlantis treasure feel
 
-### Prompt 19
+Prompt 19
 So the thing stilll says slot machine it hsould say Journey to Atlantis and the pres hit to spin gain should be the jackpot, I think it hsould flicker back and forth between jackpot!!! and the amount and it should be noticably larger for both of these text
 
 Logs:
@@ -917,7 +913,7 @@ Jackpot display — now a single large gold text element (3rem, bold) that flick
 script.js — simple setInterval that toggles the text content back and forth.
 Try a hard refresh (Ctrl+Shift+R) if you're still seeing the old version — that'll clear any cached files.
 
-### Prompt 20
+Prompt 20
 @product/assets/fonts/Bubble-w10MZ.otf
 I wannt use this font instead it's more readable
 Logs
@@ -1151,7 +1147,7 @@ Win check is now a straight comparison of the 3 symbols: 3-match, then 2-match (
 High-risk special combo (2 Trident + 1 Crown) still works
 Much cleaner — one row of 3 big icons, spinning left-to-right stop, just like a classic slot machine.
 
-### Prompt 24
+Prompt 24
 I feel like it's too zoomed into the slot machine now and instead these icons I wish them to be shown vertically instead to the right of the slow machine as well as their like values
 Like low rarity is cheaper than higher rarity if you get 3 in a row of them
 For simplicity, I think we should just have the winnings be 2 in a row or 3 in a row,
@@ -1206,7 +1202,7 @@ Example: 2 Coral at Low Risk = 50 × 2 × 1 = 100 tokens
 Example: 3 Trident at High Risk = 750 × 3 × 10 × 4 = 90,000 tokens
 Risk cards now just show the multiplier (×1, ×2, ×4) — no more RTP percentages. All 6 symbols pay out now, including Pearl of the Abyss.
 
-### Prompt 25
+Prompt 25
 I feel like the symbol values should be easier to see and read, maybe use the original bubble-regular font, also remove reel 1 2 and 3 and symbol values label, the 2 in a row and 3 in a row shoudl be explained in the rules below, token bets, I feel like it should be more obvious how many tokens you're betting, let's maybe move it into where the hit is and remove the trigger label.
 I feel like maybe the hit button should enlargen or something if the risk is higher and jiggle / shake more. Also the spinning animation should be a lot more blurred and we should be able to see the tokens being added to our balance easily, feel free to move it to somehwere the makes more sense like maybe below the slots itself and let's more of the page nd remove the boxes so it doesn't feel so contained it should flow all throughout
 Logs
@@ -1269,7 +1265,7 @@ Easy to see at a glance
 Risk tiers are now compact pills below the balance bar, with the active one highlighted in its tier color.
 
 
-### Prompt 26
+Prompt 26
 Okay the actual 3 slots should take up way more space so they're seen more easily (they hsoudl also not have a gap in between other than a line IE 1 | 2 | 3 and all encapsuled in a box and be centered along with the - + and hit button with risk indicators to the right in a thing made vertically, maybe box the machine itself so it looks like a slot machine, the info text put it to the right outside the box with just their values
 Then below in the rules you can give their name and have them shown larger so they can see it. Give them some unique lore and better names that more suit what they look like please
 also remove the up down next to the number in the bet, I think it should only be handled with the - and + or manually typed in
@@ -1342,7 +1338,7 @@ The weapon that split continents
 
 These appear in a lore grid in the rules section with bigger icons (80px), their name, rarity badge, value, and a short lore paragraph. The "How to Play" section with win formulas remains below that. All game mechanics (reel strips, spin, win detection, payouts, risk tiers) are completely unchanged.
 
-### Prompt 27
+Prompt 27
 I want this to be aligned vertically to the right within the slow machine
 IE
 +
@@ -1374,7 +1370,7 @@ Bigger slots -- The reel window now fills the cabinet width minus the bet column
 Number spinners removed -- The default browser arrows on the input are hidden via -webkit-appearance: none and -moz-appearance: textfield.
 JS updates -- Removed the now-nonexistent #current-tier element reference and changed .risk-pill selector to .risk-card to match the new HTML class names.
 
-### Prompt 28
+Prompt 28
 okay this is good, I think the jackpot should initially be higher and the win and the jackpotshould be a ripple effect from left to right and bounce auatic colors before sitching to the number, I also think the number should be much larger. The win shouldn't highlight the actual symbol but rather that box they are contained in, SLOT 1 | Slot 2 | Slot 3
 Also the win shouldn't show in the box below it like that, I think it should just be subtle and add to the balance. with some gold before shifting back to the orignal green.
 I also think the slots hsould be 1.5x larger and the hit button and machien itself should have a more oceany look to it like think trasparent glass ocean
@@ -1423,7 +1419,7 @@ Subtle win feedback -- No more result banner text for wins. Instead, when you wi
 Error messages only -- The result banner is now only used for error states (invalid bet, not enough tokens), keeping the slot area clean during normal play.
 Matching glass theme -- The cash out button, bet +/- buttons, token input, and the cash out modal all received the same frosted ocean glass treatment for visual consistency.
 
-### Prompt 29
+Prompt 29
 okay the jackpot text should be a little smaller and less yellow, focus on using for oceany colors / pink / purples
 22,500 is too low, bring it to 69,420,420 and everytime you lose a spin it adds to this total
 The slots look great but the highlight box is inconsistent, shades all the way to the top but not the bottom and the symbols in the slot should be scaled up 1.75x larger
@@ -1480,7 +1476,7 @@ Jackpot pool starts at 69,420,420 -- Every time you lose a spin, the bet amount 
 Slot symbols scaled up -- Image sizing changed from 80%/85% to 100%/100%, filling much more of each reel column.
 Win highlight fix -- Reel padding reduced from 12px to 8px so the background highlight covers consistently from top to bottom. The highlight fills the full reel column evenly now.
 
-### Prompt 30
+Prompt 30
 Switch everything to the starborn font please
 
 
